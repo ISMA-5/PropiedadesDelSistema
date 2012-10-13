@@ -4,8 +4,10 @@
  */
 package propiedadesdelsistema;
 
+import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 
 /**
@@ -19,7 +21,9 @@ public class PropiedadesDelSistema {
      */
     public static void main(String[] args) throws IOException {
         // TODO code application logic here
-        new PropiedadesDelSistema().comandoconsola("cat /proc/meminfo");
+        new PropiedadesDelSistema().comandoconsola("w");
+        IngresarComandos ver = new IngresarComandos();
+        ver.setVisible(true);
 
     }
     
