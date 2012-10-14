@@ -7,6 +7,7 @@ package propiedadesdelsistema;
 import java.awt.Font;
 import java.util.ArrayList;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 
 /**
@@ -17,6 +18,8 @@ public class VetanaPrincipal extends javax.swing.JFrame {
 
     LlenarListas listas;
     Font font = new Font(Font.DIALOG, Font.BOLD, 16);
+    String goverorselected;
+    int times;
 
     /**
      * Creates new form VetanaPrincipal
@@ -25,10 +28,12 @@ public class VetanaPrincipal extends javax.swing.JFrame {
         setLookAndFeel();
         initComponents();
         listas = new LlenarListas();
+        setEditablejText();
         informacionGeneral();
         mostrarmeminfosimple();
         mostrarcpuinfosimple();
         informacionparticiones();
+        times=0;
         obtenerListaGoverors();
         //System.out.println(listas.comandoconsolagenerico("cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_available_governors"));
     }
@@ -61,18 +66,13 @@ public class VetanaPrincipal extends javax.swing.JFrame {
                 model.addElement(listgovernors.get(i));
             }
         jComboBoxGovernors.setModel(model);
-        String goverorselected=listas.comandoconsolagenerico("cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor");
-        jComboBoxGovernors.setSelectedItem(goverorselected);
+        goverorselected=listas.comandoconsolagenerico("cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor");
     }
-    private void setStylejTextArea() {
+    private void setEditablejText() {
         jTextAreaInfoGeneral.setEditable(false);
         jTextAreaRAM.setEditable(false);
         jTextAreaCPU.setEditable(false);
         jTextAreaParticion.setEditable(false);
-        jTextAreaInfoGeneral.setFont(font);
-        jTextAreaRAM.setFont(font);
-        jTextAreaCPU.setFont(font);
-        jTextAreaParticion.setFont(font);
     }
 
     private void setLookAndFeel() {
@@ -167,6 +167,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
         jRadioButtonSimpleCPU = new javax.swing.JRadioButton();
         jRadioButtonAvanzadaCPU = new javax.swing.JRadioButton();
         jComboBoxGovernors = new javax.swing.JComboBox();
+        jCheckBox1 = new javax.swing.JCheckBox();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTextAreaCPU = new javax.swing.JTextArea();
         jPanelParticiones = new javax.swing.JPanel();
@@ -262,6 +263,24 @@ public class VetanaPrincipal extends javax.swing.JFrame {
         });
 
         jComboBoxGovernors.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBoxGovernors.setEnabled(false);
+        jComboBoxGovernors.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jComboBoxGovernorsItemStateChanged(evt);
+            }
+        });
+        jComboBoxGovernors.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxGovernorsActionPerformed(evt);
+            }
+        });
+
+        jCheckBox1.setText("Seleccionar Governador");
+        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -273,6 +292,8 @@ public class VetanaPrincipal extends javax.swing.JFrame {
                 .addComponent(jRadioButtonAvanzadaCPU)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jComboBoxGovernors, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jCheckBox1)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
@@ -280,7 +301,8 @@ public class VetanaPrincipal extends javax.swing.JFrame {
             .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                 .addComponent(jRadioButtonSimpleCPU)
                 .addComponent(jRadioButtonAvanzadaCPU)
-                .addComponent(jComboBoxGovernors, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jComboBoxGovernors, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jCheckBox1))
         );
 
         jTextAreaCPU.setColumns(20);
@@ -371,6 +393,40 @@ public class VetanaPrincipal extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jRadioButtonSImpleRAMActionPerformed
 
+    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
+        // TODO add your handling code here:
+        if(jCheckBox1.isSelected()){
+            jComboBoxGovernors.setEnabled(true);
+        }
+        else{
+            jComboBoxGovernors.setEnabled(false);
+        }
+    }//GEN-LAST:event_jCheckBox1ActionPerformed
+
+    private void jComboBoxGovernorsItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBoxGovernorsItemStateChanged
+        // TODO add your handling code here:
+        String newGovernor = (String) jComboBoxGovernors.getSelectedItem();
+        if(newGovernor!=goverorselected){
+            int selecion=JOptionPane.showConfirmDialog(this, "Esta Seguro de Cambiar El Governador", null, JOptionPane.OK_CANCEL_OPTION);
+            if(selecion==0){
+                goverorselected=newGovernor;
+                String comandoconsolagenerico = listas.comandoconsolagenerico("echo conservative > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor");
+                System.out.println(comandoconsolagenerico);
+            }
+        }
+    }//GEN-LAST:event_jComboBoxGovernorsItemStateChanged
+
+    private void jComboBoxGovernorsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxGovernorsActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBoxGovernorsActionPerformed
+
+    private boolean ispar(int i){
+        if(i%2==0){
+            return true;
+        }
+        return false;
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -385,6 +441,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JComboBox jComboBoxGovernors;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
