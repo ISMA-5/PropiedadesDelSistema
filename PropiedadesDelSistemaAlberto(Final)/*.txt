@@ -1,7 +1,0 @@
-Nombre de Usuario:	Rider
-Dirección de IP:	fe80::e22a:82ff:fefa:184%eth0 192.168.2.10
-Versión de Kernel:	Linux Rider 3.3.4-5.fc17.x86_64 #1 SMP Mon May 7 17:29:34 UTC 2012 x86_64 x86_64 x86_64 GNU/Linux
-Memoria Total:	MemTotal:        3787824 kB
-Memoria Cache:	Cached:           562288 kB
-Modelo del CPU:	model name	: AMD Turion(tm) II P560 Dual-Core Processor
-Velocidad del CPU:	cpu MHz		: 2500.000
