@@ -6,7 +6,6 @@ package propiedadesdelsistema;
 
 import java.io.File;
 import java.io.IOException;
-
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import javax.swing.JFileChooser;
@@ -29,6 +28,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
         super("Propiedades del Sistema");
         setLookAndFeel(lookAdFeel);
         initComponents();
+
         setLocationRelativeTo(this);
         listas = new LlenarListas();
         setEditablejText();
@@ -44,7 +44,6 @@ public class VetanaPrincipal extends javax.swing.JFrame {
         jTextAreaRAM.setEditable(false);
         jTextAreaCPU.setEditable(false);
         jTextAreaParticion.setEditable(false);
-        
         
     }
 
@@ -125,6 +124,33 @@ public class VetanaPrincipal extends javax.swing.JFrame {
         jTextAreaCPU.append("Available Governors" + '\t' + ':' + listcpufreq.get(4) + '\n');
     }
     
+    private void MatarprocesoPID(){
+        
+        String osName = System.getProperty("os.name");
+        String system =  "";
+        if(osName.toUpperCase().contains("WIN")){   //Windows
+            system+="tskill " +jTextFieldNumeroProceso.getText();
+        } else {                                    //Linux
+            system+="killall " + jTextFieldNumeroProceso.getText();
+        }      
+
+        Process hijo;
+        try {
+            hijo = Runtime.getRuntime().exec(system);
+            hijo.waitFor();
+            if ( hijo.exitValue()==0){
+                System.out.println( jTextFieldNumeroProceso.getText() + " Killed" );
+            }else{
+		System.out.println( "Cannot kill " + jTextFieldNumeroProceso.getText() + ". Exit code: " + hijo.exitValue() );
+            }
+        } catch (IOException e) {
+            System.out.println("Incapaz de matar el proceso.");
+        } catch (InterruptedException e) {
+            System.out.println("Incapaz de matar proceso.");
+        }      
+
+        
+    } 
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -155,8 +181,10 @@ public class VetanaPrincipal extends javax.swing.JFrame {
         jScrollPane4 = new javax.swing.JScrollPane();
         jTextAreaParticion = new javax.swing.JTextArea();
         jPanelProcesos = new javax.swing.JPanel();
+        jButtonFinalizarProcesos = new javax.swing.JButton();
         jScrollPane6 = new javax.swing.JScrollPane();
         jListProcesos = new javax.swing.JList();
+        jTextFieldNumeroProceso = new javax.swing.JTextField();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenuArchivo = new javax.swing.JMenu();
         jMenuItemGUuardar = new javax.swing.JMenuItem();
@@ -178,11 +206,11 @@ public class VetanaPrincipal extends javax.swing.JFrame {
         jPanelInfoSis.setLayout(jPanelInfoSisLayout);
         jPanelInfoSisLayout.setHorizontalGroup(
             jPanelInfoSisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 725, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 734, Short.MAX_VALUE)
         );
         jPanelInfoSisLayout.setVerticalGroup(
             jPanelInfoSisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 418, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 415, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("Informacion General", jPanelInfoSis);
@@ -235,7 +263,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
             .addGroup(jPanelRAMLayout.createSequentialGroup()
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 390, Short.MAX_VALUE))
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 386, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("RAM", jPanelRAM);
@@ -288,7 +316,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
             .addGroup(jPanelCPULayout.createSequentialGroup()
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 390, Short.MAX_VALUE))
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 386, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("CPU", jPanelCPU);
@@ -301,36 +329,47 @@ public class VetanaPrincipal extends javax.swing.JFrame {
         jPanelParticiones.setLayout(jPanelParticionesLayout);
         jPanelParticionesLayout.setHorizontalGroup(
             jPanelParticionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 725, Short.MAX_VALUE)
+            .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 734, Short.MAX_VALUE)
         );
         jPanelParticionesLayout.setVerticalGroup(
             jPanelParticionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 418, Short.MAX_VALUE)
+            .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 415, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("Particiones", jPanelParticiones);
 
-        jListProcesos.setModel(new javax.swing.AbstractListModel() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public Object getElementAt(int i) { return strings[i]; }
+        jButtonFinalizarProcesos.setText("Finalizar Procesos");
+        jButtonFinalizarProcesos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonFinalizarProcesosActionPerformed(evt);
+            }
         });
+
         jScrollPane6.setViewportView(jListProcesos);
+
+        jTextFieldNumeroProceso.setToolTipText("Ingresa el nombre del proceso");
 
         javax.swing.GroupLayout jPanelProcesosLayout = new javax.swing.GroupLayout(jPanelProcesos);
         jPanelProcesos.setLayout(jPanelProcesosLayout);
         jPanelProcesosLayout.setHorizontalGroup(
             jPanelProcesosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelProcesosLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 679, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 34, Short.MAX_VALUE))
+                .addGap(383, 383, 383)
+                .addComponent(jTextFieldNumeroProceso, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButtonFinalizarProcesos)
+                .addGap(0, 36, Short.MAX_VALUE))
+            .addComponent(jScrollPane6)
         );
         jPanelProcesosLayout.setVerticalGroup(
             jPanelProcesosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelProcesosLayout.createSequentialGroup()
-                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 93, Short.MAX_VALUE))
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 337, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
+                .addGroup(jPanelProcesosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextFieldNumeroProceso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonFinalizarProcesos))
+                .addGap(0, 23, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Procesos", jPanelProcesos);
@@ -480,6 +519,10 @@ public class VetanaPrincipal extends javax.swing.JFrame {
         jRadioButtonAvanzadaRAM.setSelected(false);
     }//GEN-LAST:event_jRadioButtonSImpleRAMActionPerformed
 
+    private void jButtonFinalizarProcesosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonFinalizarProcesosActionPerformed
+       MatarprocesoPID();
+    }//GEN-LAST:event_jButtonFinalizarProcesosActionPerformed
+
     private void guardar() {
         String title = jTabbedPane1.getTitleAt(jTabbedPane1.getSelectedIndex());
         try {
@@ -509,6 +552,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
         } else if (title.equals("Particiones")) {
             Guardx.print(jTextAreaParticion.getText());
         }
+       
     }
 
     /**
@@ -525,6 +569,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButtonFinalizarProcesos;
     private javax.swing.JList jListProcesos;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenuArchivo;
@@ -557,5 +602,6 @@ public class VetanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JTextArea jTextAreaInfoGeneral;
     private javax.swing.JTextArea jTextAreaParticion;
     private javax.swing.JTextArea jTextAreaRAM;
+    private javax.swing.JTextField jTextFieldNumeroProceso;
     // End of variables declaration//GEN-END:variables
 }
