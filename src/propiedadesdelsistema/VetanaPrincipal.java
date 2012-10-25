@@ -4,8 +4,10 @@
  */
 package propiedadesdelsistema;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import javax.swing.JFileChooser;
@@ -23,6 +25,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
 
     LlenarListas listas;
     String goverorselected;
+     public ArrayList<String> listSockets1;
     private static String lookAdFeel = UIManager.getSystemLookAndFeelClassName();
 
     public VetanaPrincipal() {
@@ -59,12 +62,50 @@ public class VetanaPrincipal extends javax.swing.JFrame {
         SwingUtilities.updateComponentTreeUI(this);
     }
 
+    
+    
+    //###########################################
+     private void comandoconsolaSockets(String pcmd){
+           listSockets1 = new ArrayList<String>();
+        try {
+            Process cmd = Runtime.getRuntime().exec(pcmd);
+            cmd.waitFor();
+            BufferedReader buf = new BufferedReader(new InputStreamReader(cmd.getInputStream()));
+            String linea = "";
+            while ((linea = buf.readLine()) != null) {
+                listSockets1.add(linea.toString());
+            }
+        } catch (Exception e) {
+            javax.swing.JOptionPane.showMessageDialog(null, e, "Excepcion", javax.swing.JOptionPane.PLAIN_MESSAGE);
+        }
+    }
+     
+      public ArrayList<String> getListSockets() {
+        return listSockets1;       
+    }
+ private void mostrarmSockets() {
+        ArrayList<String> listSockets=listSockets1;
+        for (int i = 0; i < listSockets.size(); i++) {
+           jTextAreaDispositivos.append(listSockets.get(i) + '\n');  
+          // listas.getListSockets().get(4).charAt(3);
+           
+           
+            
+           
+        }
+    }
+    
+    
+    
+    
     private void informacionparticiones() {
         ArrayList<String> listparticiones = listas.getListparticiones();
         for (int i = 0; i < listparticiones.size(); i++) {
             jTextAreaParticion.append(listparticiones.get(i) + '\n');
         }
     }
+    
+   //##################################################################
     
     private void informacionprocesos(){
         ArrayList<String> listprocesos = listas.getListprocesos();
@@ -240,6 +281,12 @@ public class VetanaPrincipal extends javax.swing.JFrame {
         jTable1 = new javax.swing.JTable();
         jScrollPane7 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
+        jPanel2 = new javax.swing.JPanel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTextAreaDispositivos = new javax.swing.JTextArea();
+        jButtonBateria = new javax.swing.JButton();
+        jButtonSockets = new javax.swing.JButton();
+        jButtonRed = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenuArchivo = new javax.swing.JMenu();
         jMenuItemGUuardar = new javax.swing.JMenuItem();
@@ -284,7 +331,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(50, 50, 50)
+                .addGap(96, 96, 96)
                 .addComponent(jLabelusername)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabelipdireccion)
@@ -296,7 +343,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
                 .addComponent(jLabelmodcpu)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabelvelocpu)
-                .addContainerGap(228, Short.MAX_VALUE))
+                .addContainerGap(182, Short.MAX_VALUE))
         );
 
         jRadioButtonVS.addTab("Inicio", jPanel1);
@@ -538,15 +585,65 @@ public class VetanaPrincipal extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelCPU2Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(jPanelCPU2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanelCPU2Layout.createSequentialGroup()
-                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 408, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18))
-                    .addGroup(jPanelCPU2Layout.createSequentialGroup()
-                        .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(29, 29, 29))))
+                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 408, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18))
         );
 
         jRadioButtonVS.addTab("CPU", jPanelCPU2);
+
+        jTextAreaDispositivos.setColumns(20);
+        jTextAreaDispositivos.setRows(5);
+        jScrollPane3.setViewportView(jTextAreaDispositivos);
+
+        jButtonBateria.setText("Inf. Bateria");
+        jButtonBateria.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonBateriaActionPerformed(evt);
+            }
+        });
+
+        jButtonSockets.setText("Sockets");
+        jButtonSockets.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonSocketsActionPerformed(evt);
+            }
+        });
+
+        jButtonRed.setText("Interfaces de Red");
+        jButtonRed.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonRedActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 833, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jButtonBateria)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButtonSockets)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButtonRed)))
+                .addGap(0, 240, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButtonBateria)
+                    .addComponent(jButtonSockets)
+                    .addComponent(jButtonRed))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 373, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        jRadioButtonVS.addTab("Dispositivos", jPanel2);
 
         jMenuArchivo.setText("Archivo");
 
@@ -683,6 +780,28 @@ public class VetanaPrincipal extends javax.swing.JFrame {
         jRadioButtonAvanzadaRAM.setSelected(false);
     }//GEN-LAST:event_jRadioButtonSImpleRAMActionPerformed
 
+    private void jButtonBateriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBateriaActionPerformed
+        // TODO add your handling code here:
+        
+         jTextAreaDispositivos.setText("");
+        comandoconsolaSockets("cat /sys/class/power_supply/BAT1/uevent ");
+         mostrarmSockets(); 
+    }//GEN-LAST:event_jButtonBateriaActionPerformed
+
+    private void jButtonSocketsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSocketsActionPerformed
+      jTextAreaDispositivos.setText("");
+        comandoconsolaSockets("lsof -i ");
+        //ps aux
+    mostrarmSockets(); 
+      
+    }//GEN-LAST:event_jButtonSocketsActionPerformed
+
+    private void jButtonRedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRedActionPerformed
+       jTextAreaDispositivos.setText("");
+        comandoconsolaSockets("ifconfig ");
+         mostrarmSockets(); 
+    }//GEN-LAST:event_jButtonRedActionPerformed
+
     private void guardar() {
         String title = jRadioButtonVS.getTitleAt(jRadioButtonVS.getSelectedIndex());
         try {
@@ -729,7 +848,10 @@ public class VetanaPrincipal extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButtonBateria;
     private javax.swing.JButton jButtonFinalizarProcesos;
+    private javax.swing.JButton jButtonRed;
+    private javax.swing.JButton jButtonSockets;
     private javax.swing.JLabel jLabelipdireccion;
     private javax.swing.JLabel jLabelmemcache;
     private javax.swing.JLabel jLabelmemtotal;
@@ -748,6 +870,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItemNimbus;
     private javax.swing.JMenu jMenuOpciones;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanelCPU2;
     private javax.swing.JPanel jPanelInfoSis;
@@ -759,12 +882,14 @@ public class VetanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JTabbedPane jRadioButtonVS;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
+    private javax.swing.JTextArea jTextAreaDispositivos;
     private javax.swing.JTextArea jTextAreaInfoGeneral;
     private javax.swing.JTextArea jTextAreaParticion;
     private javax.swing.JTextArea jTextAreaRAM;
