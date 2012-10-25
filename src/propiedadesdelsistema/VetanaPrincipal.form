@@ -98,17 +98,17 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jTabbedPaneInicio" alignment="0" max="32767" attributes="0"/>
+          <Component id="jRadioButtonVS" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jTabbedPaneInicio" alignment="0" max="32767" attributes="0"/>
+          <Component id="jRadioButtonVS" min="-2" pref="452" max="-2" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Container class="javax.swing.JTabbedPane" name="jTabbedPaneInicio">
+    <Container class="javax.swing.JTabbedPane" name="jRadioButtonVS">
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
       <SubComponents>
@@ -136,7 +136,7 @@
                               <Component id="jLabelusername" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace pref="622" max="32767" attributes="0"/>
+                      <EmptySpace pref="954" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -155,7 +155,7 @@
                       <Component id="jLabelmodcpu" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jLabelvelocpu" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="261" max="32767" attributes="0"/>
+                      <EmptySpace pref="228" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -205,12 +205,12 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jScrollPane1" alignment="0" pref="734" max="32767" attributes="0"/>
+                  <Component id="jScrollPane1" alignment="0" pref="1073" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jScrollPane1" alignment="0" pref="419" max="32767" attributes="0"/>
+                  <Component id="jScrollPane1" alignment="0" pref="410" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
           </Layout>
@@ -245,7 +245,7 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jPanel4" max="32767" attributes="0"/>
-                  <Component id="jScrollPane2" alignment="0" pref="734" max="32767" attributes="0"/>
+                  <Component id="jScrollPane2" alignment="0" pref="1073" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
@@ -253,7 +253,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jScrollPane2" pref="391" max="32767" attributes="0"/>
+                      <Component id="jScrollPane2" pref="382" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -283,7 +283,7 @@
                           <Component id="jRadioButtonSImpleRAM" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jRadioButtonAvanzadaRAM" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="0" pref="488" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="836" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -318,92 +318,6 @@
             </Container>
           </SubComponents>
         </Container>
-        <Container class="javax.swing.JPanel" name="jPanelCPU">
-          <Constraints>
-            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="CPU">
-                <Property name="tabTitle" type="java.lang.String" value="CPU"/>
-              </JTabbedPaneConstraints>
-            </Constraint>
-          </Constraints>
-
-          <Layout>
-            <DimensionLayout dim="0">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jPanel5" max="32767" attributes="0"/>
-                  <Component id="jScrollPane3" alignment="0" pref="734" max="32767" attributes="0"/>
-              </Group>
-            </DimensionLayout>
-            <DimensionLayout dim="1">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <Component id="jPanel5" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jScrollPane3" pref="391" max="32767" attributes="0"/>
-                  </Group>
-              </Group>
-            </DimensionLayout>
-          </Layout>
-          <SubComponents>
-            <Container class="javax.swing.JPanel" name="jPanel5">
-
-              <Layout>
-                <DimensionLayout dim="0">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="jRadioButtonSimpleCPU" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jRadioButtonAvanzadaCPU" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="0" pref="488" max="32767" attributes="0"/>
-                      </Group>
-                  </Group>
-                </DimensionLayout>
-                <DimensionLayout dim="1">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jRadioButtonSimpleCPU" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jRadioButtonAvanzadaCPU" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                </DimensionLayout>
-              </Layout>
-              <SubComponents>
-                <Component class="javax.swing.JRadioButton" name="jRadioButtonSimpleCPU">
-                  <Properties>
-                    <Property name="selected" type="boolean" value="true"/>
-                    <Property name="text" type="java.lang.String" value="Vista Simple"/>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioButtonSimpleCPUActionPerformed"/>
-                  </Events>
-                </Component>
-                <Component class="javax.swing.JRadioButton" name="jRadioButtonAvanzadaCPU">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Vista Avanzada"/>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioButtonAvanzadaCPUActionPerformed"/>
-                  </Events>
-                </Component>
-              </SubComponents>
-            </Container>
-            <Container class="javax.swing.JScrollPane" name="jScrollPane3">
-              <AuxValues>
-                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-              </AuxValues>
-
-              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-              <SubComponents>
-                <Component class="javax.swing.JTextArea" name="jTextAreaCPU">
-                  <Properties>
-                    <Property name="columns" type="int" value="20"/>
-                    <Property name="rows" type="int" value="5"/>
-                  </Properties>
-                </Component>
-              </SubComponents>
-            </Container>
-          </SubComponents>
-        </Container>
         <Container class="javax.swing.JPanel" name="jPanelParticiones">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
@@ -416,12 +330,12 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jScrollPane4" alignment="0" pref="734" max="32767" attributes="0"/>
+                  <Component id="jScrollPane4" alignment="0" pref="1073" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jScrollPane4" alignment="0" pref="419" max="32767" attributes="0"/>
+                  <Component id="jScrollPane4" alignment="0" pref="410" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
           </Layout>
@@ -460,7 +374,7 @@
                       <Component id="jTextFieldNumeroProceso" min="-2" pref="139" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="jButtonFinalizarProcesos" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="86" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="406" max="32767" attributes="0"/>
                   </Group>
                   <Component id="jScrollPane6" alignment="0" max="32767" attributes="0"/>
               </Group>
@@ -474,7 +388,7 @@
                           <Component id="jTextFieldNumeroProceso" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jButtonFinalizarProcesos" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="0" pref="28" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="15" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -509,6 +423,186 @@
                 <Property name="toolTipText" type="java.lang.String" value="Ingresa el nombre del proceso"/>
               </Properties>
             </Component>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="jPanelCPU2">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+              <JTabbedPaneConstraints tabName="CPU">
+                <Property name="tabTitle" type="java.lang.String" value="CPU"/>
+              </JTabbedPaneConstraints>
+            </Constraint>
+          </Constraints>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="jScrollPane5" min="-2" pref="597" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="32767" attributes="0"/>
+                      <Component id="jScrollPane7" min="-2" pref="464" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="jScrollPane5" min="-2" pref="408" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="jScrollPane7" min="-2" pref="118" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Container class="javax.swing.JScrollPane" name="jScrollPane5">
+              <AuxValues>
+                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+              </AuxValues>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+              <SubComponents>
+                <Component class="javax.swing.JTable" name="jTable1">
+                  <Properties>
+                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                      <Border info="null"/>
+                    </Property>
+                    <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                      <Table columnCount="2" rowCount="58">
+                        <Column editable="false" title="Informacion" type="java.lang.Object">
+                          <Data value="processor"/>
+                          <Data value="vendor_id"/>
+                          <Data value="cpu family"/>
+                          <Data value="model"/>
+                          <Data value="model name"/>
+                          <Data value="stepping"/>
+                          <Data value="microcode"/>
+                          <Data value="cpu MHz"/>
+                          <Data value="cache size"/>
+                          <Data value="physical id"/>
+                          <Data value="siblings"/>
+                          <Data value="core id"/>
+                          <Data value="cpu cores"/>
+                          <Data value="apicid"/>
+                          <Data value="initial apicid"/>
+                          <Data value="fpu"/>
+                          <Data value="fpu_exception"/>
+                          <Data value="cpuid_level"/>
+                          <Data value="wp"/>
+                          <Data value="flags"/>
+                          <Data value="bogomips"/>
+                          <Data value="TLB size"/>
+                          <Data value="clflush size"/>
+                          <Data value="cache alignment"/>
+                          <Data value="address size"/>
+                          <Data value="power management"/>
+                          <Data value="null"/>
+                          <Data value="processor"/>
+                          <Data value="vendor_id"/>
+                          <Data value="cpu family"/>
+                          <Data value="name"/>
+                          <Data value="model name"/>
+                          <Data value="stepping"/>
+                          <Data value="microcode"/>
+                          <Data value="cpu MHz"/>
+                          <Data value="cache size"/>
+                          <Data value="physical id"/>
+                          <Data value="siblings"/>
+                          <Data value="core id"/>
+                          <Data value="cpu cores"/>
+                          <Data value="apicid"/>
+                          <Data value="initial apicid"/>
+                          <Data value="fpu"/>
+                          <Data value="fpu_exception"/>
+                          <Data value="cpuid level"/>
+                          <Data value="wp"/>
+                          <Data value="flags"/>
+                          <Data value="bogomips"/>
+                          <Data value="TLB size"/>
+                          <Data value="clflush size"/>
+                          <Data value="cache alignment"/>
+                          <Data value="address sizes"/>
+                          <Data value="power management"/>
+                          <Data value="Max Fequencie"/>
+                          <Data value="Min Frequencie"/>
+                          <Data value="Transition Letancy"/>
+                          <Data value="Governor"/>
+                          <Data value="Available Governors"/>
+                        </Column>
+                        <Column editable="false" title="Avanzada" type="java.lang.Object"/>
+                      </Table>
+                    </Property>
+                    <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+                      <TableColumnModel selectionModel="0">
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                      </TableColumnModel>
+                    </Property>
+                    <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+                      <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
+                    </Property>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
+            <Container class="javax.swing.JScrollPane" name="jScrollPane7">
+              <AuxValues>
+                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+              </AuxValues>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+              <SubComponents>
+                <Component class="javax.swing.JTable" name="jTable2">
+                  <Properties>
+                    <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                      <Table columnCount="2" rowCount="5">
+                        <Column editable="false" title="Informacion" type="java.lang.Object">
+                          <Data value="vendor_id"/>
+                          <Data value="model name"/>
+                          <Data value="cpu MHz"/>
+                          <Data value="cache size"/>
+                          <Data value="cache alignment"/>
+                        </Column>
+                        <Column editable="false" title="Simple" type="java.lang.Object"/>
+                      </Table>
+                    </Property>
+                    <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+                      <TableColumnModel selectionModel="0">
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                      </TableColumnModel>
+                    </Property>
+                    <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+                      <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
+                    </Property>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
           </SubComponents>
         </Container>
       </SubComponents>
