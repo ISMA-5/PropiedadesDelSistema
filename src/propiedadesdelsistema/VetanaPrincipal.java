@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import javax.swing.DefaultListModel;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
@@ -25,7 +26,8 @@ public class VetanaPrincipal extends javax.swing.JFrame {
 
     LlenarListas listas;
     String goverorselected;
-     public ArrayList<String> listSockets1;
+     public ArrayList<String> listActualizacion1;
+     public ArrayList<String> listActualizacion;
     private static String lookAdFeel = UIManager.getSystemLookAndFeelClassName();
 
     public VetanaPrincipal() {
@@ -65,15 +67,45 @@ public class VetanaPrincipal extends javax.swing.JFrame {
     
     
     //###########################################
-     private void comandoconsolaSockets(String pcmd){
-           listSockets1 = new ArrayList<String>();
+    private void comandoconsolaActualizacion(String pcmd) {
+        listActualizacion1 = new ArrayList<String>();
         try {
             Process cmd = Runtime.getRuntime().exec(pcmd);
             cmd.waitFor();
             BufferedReader buf = new BufferedReader(new InputStreamReader(cmd.getInputStream()));
             String linea = "";
             while ((linea = buf.readLine()) != null) {
-                listSockets1.add(linea.toString());
+                listActualizacion1.add(linea.toString());
+            }
+        } catch (Exception e) {
+            javax.swing.JOptionPane.showMessageDialog(null, e, "Excepcion", javax.swing.JOptionPane.PLAIN_MESSAGE);
+        }
+    }
+     public ArrayList<String> getListActualizacion() {
+        return listActualizacion1;
+    }
+
+     private void mostrarActualizacion() {
+        ArrayList<String> listActualizacion = listActualizacion1;
+        for (int i = 0; i < listActualizacion.size(); i++) {
+          jListProcesos.setListData(listActualizacion.toArray());
+            
+            // listas.getListActualizacion().get(4).charAt(3);
+
+
+
+
+        }
+    }
+     private void comandoconsolaSockets(String pcmd){
+           listActualizacion1 = new ArrayList<String>();
+        try {
+            Process cmd = Runtime.getRuntime().exec(pcmd);
+            cmd.waitFor();
+            BufferedReader buf = new BufferedReader(new InputStreamReader(cmd.getInputStream()));
+            String linea = "";
+            while ((linea = buf.readLine()) != null) {
+                listActualizacion1.add(linea.toString());
             }
         } catch (Exception e) {
             javax.swing.JOptionPane.showMessageDialog(null, e, "Excepcion", javax.swing.JOptionPane.PLAIN_MESSAGE);
@@ -81,13 +113,13 @@ public class VetanaPrincipal extends javax.swing.JFrame {
     }
      
       public ArrayList<String> getListSockets() {
-        return listSockets1;       
+        return listActualizacion1;       
     }
- private void mostrarmSockets() {
-        ArrayList<String> listSockets=listSockets1;
+ private void mostrarSockets() {
+        ArrayList<String> listSockets=listActualizacion1;
         for (int i = 0; i < listSockets.size(); i++) {
            jTextAreaDispositivos.append(listSockets.get(i) + '\n');  
-          // listas.getListSockets().get(4).charAt(3);
+          // listas.getListActualizacion().get(4).charAt(3);
            
            
             
@@ -120,12 +152,12 @@ public class VetanaPrincipal extends javax.swing.JFrame {
         ArrayList<String> listmeminfo = listas.getListmeminfo();
         ArrayList<String> listcpuinfo = listas.getListcpuinfo();
         
-        jLabelusername.setText("   "+"User Name" + ':'  + "     "       + '\t'+listas.comandoconsolagenerico("hostname") + '\n'+'\n'+'\n'+'\n');
-        jLabelipdireccion.setText("   "+"IP Direcion" + ':'+ "      "       + '\t' + listas.comandoconsolagenerico("hostname -i") + '\n'+'\n'+'\n'+'\n');
-        jLabelmemtotal.setText("   "+"Memoria Total" + ':'     + '\t' + listmeminfo.get(0) + '\n'+'\n'+'\n'+'\n');
-        jLabelmemcache.setText("   "+"Memoria Cache" + ':'     + '\t' + listmeminfo.get(3) + '\n'+'\n'+'\n'+'\n');
-        jLabelmodcpu.setText("   "+"Modelo del CPU" + ':'    + '\t' + listcpuinfo.get(4) + '\n'+'\n'+'\n'+'\n');    
-        jLabelvelocpu.setText("   "+"Velocidad del CPU" + ':' + '\t' + listcpuinfo.get(7) + '\n'+'\n'+'\n'+'\n');
+        jLabelusername1.setText("   "+"User Name" + ':'  + "     "       + '\t'+listas.comandoconsolagenerico("hostname") + '\n'+'\n'+'\n'+'\n');
+        jLabelipdireccion1.setText("   "+"IP Direcion" + ':'+ "      "       + '\t' + listas.comandoconsolagenerico("hostname -i") + '\n'+'\n'+'\n'+'\n');
+        jLabelmemtotal1.setText("   "+"Memoria Total" + ':'     + '\t' + listmeminfo.get(0) + '\n'+'\n'+'\n'+'\n');
+        jLabelmemcache1.setText("   "+"Memoria Cache" + ':'     + '\t' + listmeminfo.get(3) + '\n'+'\n'+'\n'+'\n');
+        jLabelmodcpu1.setText("   "+"Modelo del CPU" + ':'    + '\t' + listcpuinfo.get(4) + '\n'+'\n'+'\n'+'\n');    
+        jLabelvelocpu1.setText("   "+"Velocidad del CPU" + ':' + '\t' + listcpuinfo.get(7) + '\n'+'\n'+'\n'+'\n');
     }
 
     private void informacionGeneral() {
@@ -252,13 +284,15 @@ public class VetanaPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         jRadioButtonVS = new javax.swing.JTabbedPane();
-        jPanel1 = new javax.swing.JPanel();
-        jLabelusername = new javax.swing.JLabel();
-        jLabelipdireccion = new javax.swing.JLabel();
-        jLabelmemtotal = new javax.swing.JLabel();
-        jLabelmemcache = new javax.swing.JLabel();
-        jLabelmodcpu = new javax.swing.JLabel();
-        jLabelvelocpu = new javax.swing.JLabel();
+        jPanelInicio = new javax.swing.JPanel();
+        jLabelusername1 = new javax.swing.JLabel();
+        jLabelipdireccion1 = new javax.swing.JLabel();
+        jLabelmemtotal1 = new javax.swing.JLabel();
+        jLabelmemcache1 = new javax.swing.JLabel();
+        jLabelmodcpu1 = new javax.swing.JLabel();
+        jLabelvelocpu1 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
         jPanelInfoSis = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextAreaInfoGeneral = new javax.swing.JTextArea();
@@ -276,6 +310,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
         jScrollPane6 = new javax.swing.JScrollPane();
         jListProcesos = new javax.swing.JList();
         jTextFieldNumeroProceso = new javax.swing.JTextField();
+        jButtonActualizar = new javax.swing.JButton();
         jPanelCPU2 = new javax.swing.JPanel();
         jScrollPane5 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
@@ -300,53 +335,103 @@ public class VetanaPrincipal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabelusername.setText("jLabel1");
+        jPanelInicio.setBackground(new java.awt.Color(204, 255, 204));
+        jPanelInicio.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanelInicio.setForeground(new java.awt.Color(102, 0, 51));
 
-        jLabelipdireccion.setText("jLabel2");
+        jLabelusername1.setBackground(new java.awt.Color(204, 204, 255));
+        jLabelusername1.setFont(new java.awt.Font("Utopia", 1, 14)); // NOI18N
+        jLabelusername1.setForeground(new java.awt.Color(0, 0, 51));
+        jLabelusername1.setText("Nombre");
+        jLabelusername1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jLabelmemtotal.setText("jLabel3");
+        jLabelipdireccion1.setFont(new java.awt.Font("Utopia", 3, 14)); // NOI18N
+        jLabelipdireccion1.setForeground(new java.awt.Color(0, 0, 51));
+        jLabelipdireccion1.setText("Dirección");
+        jLabelipdireccion1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jLabelmemcache.setText("jLabel4");
+        jLabelmemtotal1.setFont(new java.awt.Font("Utopia", 1, 14)); // NOI18N
+        jLabelmemtotal1.setForeground(new java.awt.Color(0, 0, 51));
+        jLabelmemtotal1.setText("Mem.Total");
+        jLabelmemtotal1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jLabelmodcpu.setText("jLabel5");
+        jLabelmemcache1.setFont(new java.awt.Font("Utopia", 1, 14)); // NOI18N
+        jLabelmemcache1.setForeground(new java.awt.Color(0, 0, 51));
+        jLabelmemcache1.setText("Mem.Caché");
+        jLabelmemcache1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jLabelvelocpu.setText("jLabel6");
+        jLabelmodcpu1.setFont(new java.awt.Font("Utopia", 1, 14)); // NOI18N
+        jLabelmodcpu1.setForeground(new java.awt.Color(0, 0, 51));
+        jLabelmodcpu1.setText("Model.Cpu");
+        jLabelmodcpu1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(71, 71, 71)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabelvelocpu)
-                    .addComponent(jLabelmodcpu)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jLabelmemcache)
-                        .addComponent(jLabelmemtotal)
-                        .addComponent(jLabelipdireccion)
-                        .addComponent(jLabelusername)))
-                .addContainerGap(954, Short.MAX_VALUE))
+        jLabelvelocpu1.setFont(new java.awt.Font("Utopia", 1, 14)); // NOI18N
+        jLabelvelocpu1.setForeground(new java.awt.Color(0, 0, 51));
+        jLabelvelocpu1.setText("Velocidad");
+        jLabelvelocpu1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        jButton1.setBackground(new java.awt.Color(204, 204, 255));
+        jButton1.setFont(new java.awt.Font("Cantarell", 1, 14)); // NOI18N
+        jButton1.setText("Salir");
+        jButton1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 4));
+        jButton1.setMargin(new java.awt.Insets(6, 14, 2, 14));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setFont(new java.awt.Font("Nimbus Sans L", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 204));
+        jLabel1.setText("INFORMACIÓN PRINCIPAL DEL SISTEMA");
+
+        javax.swing.GroupLayout jPanelInicioLayout = new javax.swing.GroupLayout(jPanelInicio);
+        jPanelInicio.setLayout(jPanelInicioLayout);
+        jPanelInicioLayout.setHorizontalGroup(
+            jPanelInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelInicioLayout.createSequentialGroup()
+                .addContainerGap(989, Short.MAX_VALUE)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(45, 45, 45))
+            .addGroup(jPanelInicioLayout.createSequentialGroup()
+                .addGroup(jPanelInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanelInicioLayout.createSequentialGroup()
+                        .addGap(144, 144, 144)
+                        .addGroup(jPanelInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jLabelvelocpu1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabelmemcache1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabelmemtotal1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabelipdireccion1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabelusername1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabelmodcpu1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(jPanelInicioLayout.createSequentialGroup()
+                        .addGap(229, 229, 229)
+                        .addComponent(jLabel1)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(96, 96, 96)
-                .addComponent(jLabelusername)
+        jPanelInicioLayout.setVerticalGroup(
+            jPanelInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelInicioLayout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabelusername1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabelipdireccion1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabelipdireccion)
+                .addComponent(jLabelmemtotal1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabelmemtotal)
+                .addComponent(jLabelmemcache1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabelmemcache)
+                .addComponent(jLabelmodcpu1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabelmodcpu)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabelvelocpu)
-                .addContainerGap(182, Short.MAX_VALUE))
+                .addComponent(jLabelvelocpu1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
-        jRadioButtonVS.addTab("Inicio", jPanel1);
+        jRadioButtonVS.addTab("Inicio", jPanelInicio);
 
         jTextAreaInfoGeneral.setColumns(20);
         jTextAreaInfoGeneral.setRows(5);
@@ -356,11 +441,11 @@ public class VetanaPrincipal extends javax.swing.JFrame {
         jPanelInfoSis.setLayout(jPanelInfoSisLayout);
         jPanelInfoSisLayout.setHorizontalGroup(
             jPanelInfoSisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1073, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1104, Short.MAX_VALUE)
         );
         jPanelInfoSisLayout.setVerticalGroup(
             jPanelInfoSisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 410, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 425, Short.MAX_VALUE)
         );
 
         jRadioButtonVS.addTab("Informacion General", jPanelInfoSis);
@@ -392,7 +477,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
                 .addComponent(jRadioButtonSImpleRAM)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jRadioButtonAvanzadaRAM)
-                .addGap(0, 836, Short.MAX_VALUE))
+                .addGap(0, 858, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -413,7 +498,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
             .addGroup(jPanelRAMLayout.createSequentialGroup()
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 382, Short.MAX_VALUE))
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 396, Short.MAX_VALUE))
         );
 
         jRadioButtonVS.addTab("RAM", jPanelRAM);
@@ -426,11 +511,11 @@ public class VetanaPrincipal extends javax.swing.JFrame {
         jPanelParticiones.setLayout(jPanelParticionesLayout);
         jPanelParticionesLayout.setHorizontalGroup(
             jPanelParticionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 1073, Short.MAX_VALUE)
+            .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 1104, Short.MAX_VALUE)
         );
         jPanelParticionesLayout.setVerticalGroup(
             jPanelParticionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 410, Short.MAX_VALUE)
+            .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 425, Short.MAX_VALUE)
         );
 
         jRadioButtonVS.addTab("Particiones", jPanelParticiones);
@@ -446,16 +531,25 @@ public class VetanaPrincipal extends javax.swing.JFrame {
 
         jTextFieldNumeroProceso.setToolTipText("Ingresa el nombre del proceso");
 
+        jButtonActualizar.setText("Actualizar");
+        jButtonActualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonActualizarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanelProcesosLayout = new javax.swing.GroupLayout(jPanelProcesos);
         jPanelProcesos.setLayout(jPanelProcesosLayout);
         jPanelProcesosLayout.setHorizontalGroup(
             jPanelProcesosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelProcesosLayout.createSequentialGroup()
-                .addGap(383, 383, 383)
+                .addGap(52, 52, 52)
+                .addComponent(jButtonActualizar)
+                .addGap(237, 237, 237)
                 .addComponent(jTextFieldNumeroProceso, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButtonFinalizarProcesos)
-                .addGap(0, 406, Short.MAX_VALUE))
+                .addGap(0, 395, Short.MAX_VALUE))
             .addComponent(jScrollPane6)
         );
         jPanelProcesosLayout.setVerticalGroup(
@@ -465,13 +559,13 @@ public class VetanaPrincipal extends javax.swing.JFrame {
                 .addGap(30, 30, 30)
                 .addGroup(jPanelProcesosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextFieldNumeroProceso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButtonFinalizarProcesos))
-                .addGap(0, 15, Short.MAX_VALUE))
+                    .addComponent(jButtonFinalizarProcesos)
+                    .addComponent(jButtonActualizar))
+                .addGap(0, 33, Short.MAX_VALUE))
         );
 
         jRadioButtonVS.addTab("Procesos", jPanelProcesos);
 
-        jTable1.setBorder(null);
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"processor", null},
@@ -577,7 +671,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
             jPanelCPU2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelCPU2Layout.createSequentialGroup()
                 .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 597, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 43, Short.MAX_VALUE)
                 .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 464, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanelCPU2Layout.setVerticalGroup(
@@ -630,7 +724,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
                         .addComponent(jButtonSockets)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButtonRed)))
-                .addGap(0, 240, Short.MAX_VALUE))
+                .addGap(0, 271, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -639,7 +733,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
                     .addComponent(jButtonBateria)
                     .addComponent(jButtonSockets)
                     .addComponent(jButtonRed))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 373, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -784,23 +878,38 @@ public class VetanaPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
         
          jTextAreaDispositivos.setText("");
-        comandoconsolaSockets("cat /sys/class/power_supply/BAT1/uevent ");
-         mostrarmSockets(); 
+        comandoconsolaActualizacion("cat /sys/class/power_supply/BAT1/uevent ");
+         mostrarSockets(); 
     }//GEN-LAST:event_jButtonBateriaActionPerformed
 
     private void jButtonSocketsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSocketsActionPerformed
       jTextAreaDispositivos.setText("");
-        comandoconsolaSockets("lsof -i ");
+        comandoconsolaActualizacion("lsof -i ");
         //ps aux
-    mostrarmSockets(); 
+    mostrarSockets(); 
       
     }//GEN-LAST:event_jButtonSocketsActionPerformed
 
     private void jButtonRedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRedActionPerformed
        jTextAreaDispositivos.setText("");
-        comandoconsolaSockets("ifconfig ");
-         mostrarmSockets(); 
+        comandoconsolaActualizacion("ifconfig ");
+         mostrarSockets(); 
     }//GEN-LAST:event_jButtonRedActionPerformed
+
+    private void jButtonActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonActualizarActionPerformed
+        // TODO add your handling code here:
+        DefaultListModel model = new DefaultListModel();
+       jListProcesos.setModel(model);
+        comandoconsolaActualizacion("ps aux");
+        //ps aux lsof -i 
+        mostrarActualizacion();
+    }//GEN-LAST:event_jButtonActualizarActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        System.exit(0);
+
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     private void guardar() {
         String title = jRadioButtonVS.getTitleAt(jRadioButtonVS.getSelectedIndex());
@@ -848,16 +957,19 @@ public class VetanaPrincipal extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButtonActualizar;
     private javax.swing.JButton jButtonBateria;
     private javax.swing.JButton jButtonFinalizarProcesos;
     private javax.swing.JButton jButtonRed;
     private javax.swing.JButton jButtonSockets;
-    private javax.swing.JLabel jLabelipdireccion;
-    private javax.swing.JLabel jLabelmemcache;
-    private javax.swing.JLabel jLabelmemtotal;
-    private javax.swing.JLabel jLabelmodcpu;
-    private javax.swing.JLabel jLabelusername;
-    private javax.swing.JLabel jLabelvelocpu;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabelipdireccion1;
+    private javax.swing.JLabel jLabelmemcache1;
+    private javax.swing.JLabel jLabelmemtotal1;
+    private javax.swing.JLabel jLabelmodcpu1;
+    private javax.swing.JLabel jLabelusername1;
+    private javax.swing.JLabel jLabelvelocpu1;
     private javax.swing.JList jListProcesos;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenuArchivo;
@@ -869,11 +981,11 @@ public class VetanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItemMetal;
     private javax.swing.JMenuItem jMenuItemNimbus;
     private javax.swing.JMenu jMenuOpciones;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanelCPU2;
     private javax.swing.JPanel jPanelInfoSis;
+    private javax.swing.JPanel jPanelInicio;
     private javax.swing.JPanel jPanelParticiones;
     private javax.swing.JPanel jPanelProcesos;
     private javax.swing.JPanel jPanelRAM;

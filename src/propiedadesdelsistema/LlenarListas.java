@@ -13,14 +13,15 @@ import java.util.ArrayList;
  * @author Rider
  */
 public class LlenarListas {
-    
+
     private ArrayList<String> listmeminfo;
     private ArrayList<String> listcpuinfo;
     private ArrayList<String> listcpufreq;
     private ArrayList<String> listparticiones;
     private ArrayList<String> listprocesos;
+    private ArrayList<String> listactualizacion;
     String linea;
-    
+
     public LlenarListas() {
         listcpufreq = new ArrayList<String>();
         comandoconsolaprocesos("ps aux"); //axf
@@ -33,9 +34,9 @@ public class LlenarListas {
         comandoconsolacpufreq("cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor");
         comandoconsolacpufreq("cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_available_governors");
     }
-    
-    private void comandoconsolaprocesos(String pcmd){
-             listprocesos = new ArrayList<String>();
+
+    private void comandoconsolaprocesos(String pcmd) {
+        listprocesos = new ArrayList<String>();
         try {
             Process cmd = Runtime.getRuntime().exec(pcmd);
             cmd.waitFor();
@@ -48,9 +49,24 @@ public class LlenarListas {
             javax.swing.JOptionPane.showMessageDialog(null, e, "Excepcion", javax.swing.JOptionPane.PLAIN_MESSAGE);
         }
     }
-    
-    private void comandoconsolaparticiones(String pcmd){
-             listparticiones = new ArrayList<String>();
+
+    private void comandoconsolaactualizacion(String pcmd) {
+        listactualizacion = new ArrayList<String>();
+        try {
+            Process cmd = Runtime.getRuntime().exec(pcmd);
+            cmd.waitFor();
+            BufferedReader buf = new BufferedReader(new InputStreamReader(cmd.getInputStream()));
+            String linea = "";
+            while ((linea = buf.readLine()) != null) {
+                listactualizacion.add(linea.toString());
+            }
+        } catch (Exception e) {
+            javax.swing.JOptionPane.showMessageDialog(null, e, "Excepcion", javax.swing.JOptionPane.PLAIN_MESSAGE);
+        }
+    }
+
+    private void comandoconsolaparticiones(String pcmd) {
+        listparticiones = new ArrayList<String>();
         try {
             Process cmd = Runtime.getRuntime().exec(pcmd);
             cmd.waitFor();
@@ -63,7 +79,7 @@ public class LlenarListas {
             javax.swing.JOptionPane.showMessageDialog(null, e, "Excepcion", javax.swing.JOptionPane.PLAIN_MESSAGE);
         }
     }
-    
+
     private void comandoconsolameminfo(String pcmd) {
         listmeminfo = new ArrayList<String>();
         try {
@@ -78,7 +94,7 @@ public class LlenarListas {
             javax.swing.JOptionPane.showMessageDialog(null, e, "Excepcion", javax.swing.JOptionPane.PLAIN_MESSAGE);
         }
     }
-    
+
     private void comandoconsolacpuinfo(String pcmd) {
         listcpuinfo = new ArrayList<String>();
         try {
@@ -93,7 +109,7 @@ public class LlenarListas {
             javax.swing.JOptionPane.showMessageDialog(null, e, "Excepcion", javax.swing.JOptionPane.PLAIN_MESSAGE);
         }
     }
-    
+
     private void comandoconsolacpufreq(String pcmd) {
         try {
             Process cmd = Runtime.getRuntime().exec(pcmd);
@@ -105,7 +121,7 @@ public class LlenarListas {
             javax.swing.JOptionPane.showMessageDialog(null, e, "Excepcion", javax.swing.JOptionPane.PLAIN_MESSAGE);
         }
     }
-    
+
     public String comandoconsolagenerico(String pcmd) {
         try {
             Process cmd = Runtime.getRuntime().exec(pcmd);
@@ -117,11 +133,11 @@ public class LlenarListas {
         }
         return linea.toString();
     }
-    
+
     public ArrayList<String> getListmeminfo() {
         return listmeminfo;
     }
-    
+
     public ArrayList<String> getListcpuinfo() {
         return listcpuinfo;
     }
@@ -129,8 +145,7 @@ public class LlenarListas {
     public ArrayList<String> getListparticiones() {
         return listparticiones;
     }
-    
-    
+
     public ArrayList<String> getListcpufreq() {
         return listcpufreq;
     }
@@ -138,7 +153,7 @@ public class LlenarListas {
     ArrayList<String> getListprocesos() {
         return listprocesos;
     }
-
-
-    
+ public ArrayList<String> getListActualizacion() {
+        return listactualizacion;
+    }   
 }
