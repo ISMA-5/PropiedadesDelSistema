@@ -20,6 +20,8 @@ public class LlenarListas {
     private ArrayList<String> listparticiones;
     private ArrayList<String> listprocesos;
     private ArrayList<String> listactualizacion;
+    private ArrayList<String> listadistribucion;
+    private ArrayList<String> listusb;
     String linea;
 
     public LlenarListas() {
@@ -28,11 +30,44 @@ public class LlenarListas {
         comandoconsolameminfo("cat /proc/meminfo");
         comandoconsolacpuinfo("cat /proc/cpuinfo");
         comandoconsolaparticiones("df");
+        comandoconsoladistribucion("lsb_release -idc");
+        comandoconsolausb("lsusb");
         comandoconsolacpufreq("cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq");
         comandoconsolacpufreq("cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq");
         comandoconsolacpufreq("cat /sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_transition_latency");
         comandoconsolacpufreq("cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor");
         comandoconsolacpufreq("cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_available_governors");
+
+    }
+
+    private void comandoconsoladistribucion(String pcmd) {
+        listadistribucion = new ArrayList<String>();
+        try {
+            Process cmd = Runtime.getRuntime().exec(pcmd);
+            cmd.waitFor();
+            BufferedReader buf = new BufferedReader(new InputStreamReader(cmd.getInputStream()));
+            String linea = "";
+            while ((linea = buf.readLine()) != null) {
+                listadistribucion.add(linea.toString());
+            }
+        } catch (Exception e) {
+            javax.swing.JOptionPane.showMessageDialog(null, e, "Excepcion", javax.swing.JOptionPane.PLAIN_MESSAGE);
+        }
+    }
+
+    private void comandoconsolausb(String pcmd) {
+        listusb = new ArrayList<String>();
+        try {
+            Process cmd = Runtime.getRuntime().exec(pcmd);
+            cmd.waitFor();
+            BufferedReader buf = new BufferedReader(new InputStreamReader(cmd.getInputStream()));
+            String linea = "";
+            while ((linea = buf.readLine()) != null) {
+                listusb.add(linea.toString());
+            }
+        } catch (Exception e) {
+            javax.swing.JOptionPane.showMessageDialog(null, e, "Excepcion", javax.swing.JOptionPane.PLAIN_MESSAGE);
+        }
     }
 
     private void comandoconsolaprocesos(String pcmd) {
@@ -134,6 +169,14 @@ public class LlenarListas {
         return linea.toString();
     }
 
+    public ArrayList<String> getListdistribucion() {
+        return listadistribucion;
+    }
+
+    public ArrayList<String> getListusb() {
+        return listusb;
+    }
+
     public ArrayList<String> getListmeminfo() {
         return listmeminfo;
     }
@@ -153,7 +196,8 @@ public class LlenarListas {
     ArrayList<String> getListprocesos() {
         return listprocesos;
     }
- public ArrayList<String> getListActualizacion() {
+
+    public ArrayList<String> getListActualizacion() {
         return listactualizacion;
-    }   
+    }
 }

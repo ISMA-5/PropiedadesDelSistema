@@ -119,11 +119,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
         ArrayList<String> listSockets=listActualizacion1;
         for (int i = 0; i < listSockets.size(); i++) {
            jTextAreaDispositivos.append(listSockets.get(i) + '\n');  
-          // listas.getListActualizacion().get(4).charAt(3);
-           
-           
-            
-           
+          // listas.getListActualizacion().get(4).charAt(3);   
         }
     }
     
@@ -990,24 +986,32 @@ public class VetanaPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
         // CON ESTE COMANDO VISUALIZAMOS CLARAMENTE LA DISTRIBUCIÒN DE LINUX
         jTextAreaDistribucion.setText("");
-        comandoconsolaSockets("lsb_release -idc");
-        mostrarSockets();
+        ArrayList<String> listadistribucion = listas.getListdistribucion();
+        for (int i = 0; i < listadistribucion.size(); i++) {
+            jTextAreaDistribucion.append(listadistribucion.get(i) + '\n');
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
        //MUESTRA INFORMACION RAPIDA SOBRE LA BATERIA
-        jTextAreaDistribucion.setText("");
-        comandoconsolaSockets("acpi -bi");
-        mostrarSockets();
+         jTextAreaDistribucion.setText("");
+         jTextAreaDistribucion.append("Usuario" + ':'  + "      "       + '\t' + listas.comandoconsolagenerico("hostname") + '\n');
+         jTextAreaDistribucion.append("Bateria" + ':'  + "      "       + '\t' + listas.comandoconsolagenerico("acpi -bi") + '\n');
+         jTextAreaDistribucion.append("Fecha" + ':'  + "      "       + '\t' + listas.comandoconsolagenerico("date") + '\n');
+       
+       
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
        //NOS MUESTRA LOS DISPOSITIVOS USB
         jTextAreaDistribucion.setText("");
-        comandoconsolaSockets("lsusb");
-        mostrarSockets();
+        ArrayList<String> listadistribucion = listas.getListusb();
+        for (int i = 0; i < listadistribucion.size(); i++) {
+            jTextAreaDistribucion.append(listadistribucion.get(i) + '\n');
+        }
+        
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
