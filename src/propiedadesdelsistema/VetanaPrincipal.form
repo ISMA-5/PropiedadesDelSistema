@@ -363,12 +363,12 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jScrollPane1" alignment="0" pref="1560" max="32767" attributes="0"/>
+                  <Component id="jScrollPane1" alignment="0" pref="1639" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jScrollPane1" alignment="0" pref="410" max="32767" attributes="0"/>
+                  <Component id="jScrollPane1" alignment="0" pref="425" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
           </Layout>
@@ -402,21 +402,92 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jPanel4" max="32767" attributes="0"/>
-                  <Component id="jScrollPane2" alignment="0" pref="1560" max="32767" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="jScrollPane9" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="619" max="32767" attributes="0"/>
+                      <Component id="jScrollPane2" min="-2" pref="552" max="-2" attributes="0"/>
+                  </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jScrollPane2" pref="382" max="32767" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jScrollPane9" min="-2" max="-2" attributes="0"/>
+                          <Component id="jScrollPane2" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="0" pref="3" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
+            <Container class="javax.swing.JScrollPane" name="jScrollPane9">
+              <AuxValues>
+                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+              </AuxValues>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+              <SubComponents>
+                <Component class="javax.swing.JTable" name="jTableRAM">
+                  <Properties>
+                    <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                      <Table columnCount="2" rowCount="46">
+                        <Column editable="true" title="INFORMACION" type="java.lang.Object">
+                          <Data value="MemTotal:"/>
+                          <Data value="MemFree:"/>
+                          <Data value="Buffers:"/>
+                          <Data value="Cached:"/>
+                          <Data value="SwapCached:"/>
+                          <Data value="Active:"/>
+                          <Data value="Inactive:"/>
+                          <Data value="Active(anon):"/>
+                          <Data value="Inactive(anon):"/>
+                          <Data value="Active(file):"/>
+                          <Data value="Inactive(file):"/>
+                          <Data value="Unevictable:"/>
+                          <Data value="Mlocked:"/>
+                          <Data value="HighTotal:"/>
+                          <Data value="HighFree:"/>
+                          <Data value="LowTotal:"/>
+                          <Data value="LowFree:"/>
+                          <Data value="SwapTotal:"/>
+                          <Data value="SwapFree:"/>
+                          <Data value="Dirty:"/>
+                          <Data value="Writeback:"/>
+                          <Data value="AnonPages:"/>
+                          <Data value="Mapped:"/>
+                          <Data value="Shmem:"/>
+                          <Data value="Slab:"/>
+                          <Data value="SReclaimable:"/>
+                          <Data value="SUnreclaim:"/>
+                          <Data value="KernelStack:"/>
+                          <Data value="PageTables:"/>
+                          <Data value="NFS_Unstable:"/>
+                          <Data value="Bounce:"/>
+                          <Data value="WritebackTmp:"/>
+                          <Data value="CommitLimit:"/>
+                          <Data value="Committed_AS:"/>
+                          <Data value="VmallocTotal:"/>
+                          <Data value="VmallocUsed:"/>
+                          <Data value="VmallocChunk:"/>
+                          <Data value="HardwareCorrupted:"/>
+                          <Data value="AnonHugePages:"/>
+                          <Data value="HugePages_Total:"/>
+                          <Data value="HugePages_Free:"/>
+                          <Data value="HugePages_Rsvd:"/>
+                          <Data value="HugePages_Surp:"/>
+                          <Data value="Hugepagesize:"/>
+                          <Data value="DirectMap4k:"/>
+                          <Data value="DirectMap4M:"/>
+                        </Column>
+                        <Column editable="true" title="AVANZADA" type="java.lang.Object"/>
+                      </Table>
+                    </Property>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
             <Container class="javax.swing.JScrollPane" name="jScrollPane2">
               <AuxValues>
                 <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
@@ -424,53 +495,23 @@
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JTextArea" name="jTextAreaRAM">
+                <Component class="javax.swing.JTable" name="jTableRAMSIMPLE">
                   <Properties>
-                    <Property name="columns" type="int" value="20"/>
-                    <Property name="rows" type="int" value="5"/>
+                    <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                      <Table columnCount="2" rowCount="7">
+                        <Column editable="true" title="INFORMACION" type="java.lang.Object">
+                          <Data value="MemTotal:"/>
+                          <Data value="MemFree:"/>
+                          <Data value="Buffers:"/>
+                          <Data value="Cached:"/>
+                          <Data value="SwapCached:"/>
+                          <Data value="Active:"/>
+                          <Data value="Inactive:"/>
+                        </Column>
+                        <Column editable="true" title="SIMPLE" type="java.lang.Object"/>
+                      </Table>
+                    </Property>
                   </Properties>
-                </Component>
-              </SubComponents>
-            </Container>
-            <Container class="javax.swing.JPanel" name="jPanel4">
-
-              <Layout>
-                <DimensionLayout dim="0">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="jRadioButtonSImpleRAM" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jRadioButtonAvanzadaRAM" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="0" pref="1323" max="32767" attributes="0"/>
-                      </Group>
-                  </Group>
-                </DimensionLayout>
-                <DimensionLayout dim="1">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jRadioButtonSImpleRAM" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jRadioButtonAvanzadaRAM" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                </DimensionLayout>
-              </Layout>
-              <SubComponents>
-                <Component class="javax.swing.JRadioButton" name="jRadioButtonSImpleRAM">
-                  <Properties>
-                    <Property name="selected" type="boolean" value="true"/>
-                    <Property name="text" type="java.lang.String" value="Vista Simple"/>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioButtonSImpleRAMActionPerformed"/>
-                  </Events>
-                </Component>
-                <Component class="javax.swing.JRadioButton" name="jRadioButtonAvanzadaRAM">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Vista Avanzada"/>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioButtonAvanzadaRAMActionPerformed"/>
-                  </Events>
                 </Component>
               </SubComponents>
             </Container>
@@ -488,12 +529,12 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jScrollPane4" alignment="0" pref="1560" max="32767" attributes="0"/>
+                  <Component id="jScrollPane4" alignment="0" pref="1639" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jScrollPane4" alignment="0" pref="410" max="32767" attributes="0"/>
+                  <Component id="jScrollPane4" alignment="0" pref="425" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
           </Layout>
@@ -534,7 +575,7 @@
                       <Component id="jTextFieldNumeroProceso" min="-2" pref="139" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="jButtonFinalizarProcesos" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="910" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="930" max="32767" attributes="0"/>
                   </Group>
                   <Component id="jScrollPane6" alignment="0" max="32767" attributes="0"/>
               </Group>
@@ -549,7 +590,7 @@
                           <Component id="jButtonFinalizarProcesos" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jButtonActualizar" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="0" pref="15" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="33" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -608,7 +649,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="jScrollPane5" min="-2" pref="597" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" pref="499" max="32767" attributes="0"/>
+                      <EmptySpace type="unrelated" pref="578" max="32767" attributes="0"/>
                       <Component id="jScrollPane7" min="-2" pref="464" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -789,7 +830,7 @@
                               <Component id="jButtonRed" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace min="0" pref="727" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="806" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -801,7 +842,7 @@
                           <Component id="jButtonSockets" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jButtonRed" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="9" max="32767" attributes="0"/>
+                      <EmptySpace pref="27" max="32767" attributes="0"/>
                       <Component id="jScrollPane3" min="-2" pref="373" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -881,7 +922,7 @@
                           <Component id="jButton3" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jButton4" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace pref="7" max="32767" attributes="0"/>
                       <Component id="jScrollPane8" min="-2" pref="393" max="-2" attributes="0"/>
                   </Group>
               </Group>

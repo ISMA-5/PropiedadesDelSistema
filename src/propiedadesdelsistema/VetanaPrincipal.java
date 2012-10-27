@@ -45,11 +45,11 @@ public class VetanaPrincipal extends javax.swing.JFrame {
         inicio();
        llenartabla();
         llenarinfocpusimple();
+        mostrarmeminfoavanzada();
     }
 
     private void setEditablejText() {
         jTextAreaInfoGeneral.setEditable(false);
-        jTextAreaRAM.setEditable(false);
         jTextAreaParticion.setEditable(false);
         
     }
@@ -174,19 +174,29 @@ public class VetanaPrincipal extends javax.swing.JFrame {
 
     private void mostrarmeminfosimple() {
         ArrayList<String> listmeminfo = listas.getListmeminfo();
-        jTextAreaRAM.append("Memoria Total" + ':' + "" + '\t' + listmeminfo.get(0) + '\n');
-        jTextAreaRAM.append("Memoria Libre" + ':' + "" + '\t' + listmeminfo.get(1) + '\n');
-        jTextAreaRAM.append("Buffers" + ':' + "             " + '\t' + listmeminfo.get(2) + '\n');
-        jTextAreaRAM.append("Memoria Cache" + ':' + "" + '\t' + listmeminfo.get(3) + '\n');
-        jTextAreaRAM.append("Modelo del CPU"+ ':' + "" + '\t' + listmeminfo.get(4) + '\n');
-        jTextAreaRAM.append("Memoria Virtual" + ':' + "" + '\t' + listmeminfo.get(13) + '\n');
-        jTextAreaRAM.append("Memoria Virtual Libre" + ':' + "" + '\t' + listmeminfo.get(14) + '\n');
+        String meminfo = listmeminfo.get(0);
+        String meminfo1 = listmeminfo.get(1);
+        String meminfo2 = listmeminfo.get(2);
+        String meminfo3 = listmeminfo.get(3);
+        String meminfo4 = listmeminfo.get(4);
+        String meminfo5 = listmeminfo.get(5);
+        String meminfo6 = listmeminfo.get(6);
+        TableModel modelo = jTableRAMSIMPLE.getModel();
+        modelo.setValueAt(valorDepurado(meminfo), 0, 1);
+        modelo.setValueAt(valorDepurado(meminfo1), 1, 1);
+        modelo.setValueAt(valorDepurado(meminfo2), 2, 1);
+        modelo.setValueAt(valorDepurado(meminfo3), 3, 1);
+        modelo.setValueAt(valorDepurado(meminfo4), 4, 1);
+        modelo.setValueAt(valorDepurado(meminfo5), 5, 1);
+        modelo.setValueAt(valorDepurado(meminfo6), 6, 1);
     }
 
     private void mostrarmeminfoavanzada() {
         ArrayList<String> listmeminfo = listas.getListmeminfo();
         for (int i = 0; i < listmeminfo.size(); i++) {
-            jTextAreaRAM.append(listmeminfo.get(i) + '\n');
+            String valorDepurados = valorDepurado(listmeminfo.get(i)+ "\n");
+            TableModel modelo = jTableRAM.getModel();
+            modelo.setValueAt(valorDepurados, i, 0);
         }
     }
     
@@ -298,11 +308,10 @@ public class VetanaPrincipal extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextAreaInfoGeneral = new javax.swing.JTextArea();
         jPanelRAM = new javax.swing.JPanel();
+        jScrollPane9 = new javax.swing.JScrollPane();
+        jTableRAM = new javax.swing.JTable();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTextAreaRAM = new javax.swing.JTextArea();
-        jPanel4 = new javax.swing.JPanel();
-        jRadioButtonSImpleRAM = new javax.swing.JRadioButton();
-        jRadioButtonAvanzadaRAM = new javax.swing.JRadioButton();
+        jTableRAMSIMPLE = new javax.swing.JTable();
         jPanelParticiones = new javax.swing.JPanel();
         jScrollPane4 = new javax.swing.JScrollPane();
         jTextAreaParticion = new javax.swing.JTextArea();
@@ -419,64 +428,102 @@ public class VetanaPrincipal extends javax.swing.JFrame {
         jPanelInfoSis.setLayout(jPanelInfoSisLayout);
         jPanelInfoSisLayout.setHorizontalGroup(
             jPanelInfoSisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1560, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1639, Short.MAX_VALUE)
         );
         jPanelInfoSisLayout.setVerticalGroup(
             jPanelInfoSisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 410, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 425, Short.MAX_VALUE)
         );
 
         jRadioButtonVS.addTab("Informacion General", jPanelInfoSis);
 
-        jTextAreaRAM.setColumns(20);
-        jTextAreaRAM.setRows(5);
-        jScrollPane2.setViewportView(jTextAreaRAM);
-
-        jRadioButtonSImpleRAM.setSelected(true);
-        jRadioButtonSImpleRAM.setText("Vista Simple");
-        jRadioButtonSImpleRAM.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButtonSImpleRAMActionPerformed(evt);
+        jTableRAM.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"MemTotal:", null},
+                {"MemFree:", null},
+                {"Buffers:", null},
+                {"Cached:", null},
+                {"SwapCached:", null},
+                {"Active:", null},
+                {"Inactive:", null},
+                {"Active(anon):", null},
+                {"Inactive(anon):", null},
+                {"Active(file):", null},
+                {"Inactive(file):", null},
+                {"Unevictable:", null},
+                {"Mlocked:", null},
+                {"HighTotal:", null},
+                {"HighFree:", null},
+                {"LowTotal:", null},
+                {"LowFree:", null},
+                {"SwapTotal:", null},
+                {"SwapFree:", null},
+                {"Dirty:", null},
+                {"Writeback:", null},
+                {"AnonPages:", null},
+                {"Mapped:", null},
+                {"Shmem:", null},
+                {"Slab:", null},
+                {"SReclaimable:", null},
+                {"SUnreclaim:", null},
+                {"KernelStack:", null},
+                {"PageTables:", null},
+                {"NFS_Unstable:", null},
+                {"Bounce:", null},
+                {"WritebackTmp:", null},
+                {"CommitLimit:", null},
+                {"Committed_AS:", null},
+                {"VmallocTotal:", null},
+                {"VmallocUsed:", null},
+                {"VmallocChunk:", null},
+                {"HardwareCorrupted:", null},
+                {"AnonHugePages:", null},
+                {"HugePages_Total:", null},
+                {"HugePages_Free:", null},
+                {"HugePages_Rsvd:", null},
+                {"HugePages_Surp:", null},
+                {"Hugepagesize:", null},
+                {"DirectMap4k:", null},
+                {"DirectMap4M:", null}
+            },
+            new String [] {
+                "INFORMACION", "AVANZADA"
             }
-        });
+        ));
+        jScrollPane9.setViewportView(jTableRAM);
 
-        jRadioButtonAvanzadaRAM.setText("Vista Avanzada");
-        jRadioButtonAvanzadaRAM.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButtonAvanzadaRAMActionPerformed(evt);
+        jTableRAMSIMPLE.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"MemTotal:", null},
+                {"MemFree:", null},
+                {"Buffers:", null},
+                {"Cached:", null},
+                {"SwapCached:", null},
+                {"Active:", null},
+                {"Inactive:", null}
+            },
+            new String [] {
+                "INFORMACION", "SIMPLE"
             }
-        });
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addComponent(jRadioButtonSImpleRAM)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jRadioButtonAvanzadaRAM)
-                .addGap(0, 1323, Short.MAX_VALUE))
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                .addComponent(jRadioButtonSImpleRAM)
-                .addComponent(jRadioButtonAvanzadaRAM))
-        );
+        ));
+        jScrollPane2.setViewportView(jTableRAMSIMPLE);
 
         javax.swing.GroupLayout jPanelRAMLayout = new javax.swing.GroupLayout(jPanelRAM);
         jPanelRAM.setLayout(jPanelRAMLayout);
         jPanelRAMLayout.setHorizontalGroup(
             jPanelRAMLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 1560, Short.MAX_VALUE)
+            .addGroup(jPanelRAMLayout.createSequentialGroup()
+                .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 619, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 552, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanelRAMLayout.setVerticalGroup(
             jPanelRAMLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelRAMLayout.createSequentialGroup()
-                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 382, Short.MAX_VALUE))
+                .addGroup(jPanelRAMLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 3, Short.MAX_VALUE))
         );
 
         jRadioButtonVS.addTab("RAM", jPanelRAM);
@@ -489,11 +536,11 @@ public class VetanaPrincipal extends javax.swing.JFrame {
         jPanelParticiones.setLayout(jPanelParticionesLayout);
         jPanelParticionesLayout.setHorizontalGroup(
             jPanelParticionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 1560, Short.MAX_VALUE)
+            .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 1639, Short.MAX_VALUE)
         );
         jPanelParticionesLayout.setVerticalGroup(
             jPanelParticionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 410, Short.MAX_VALUE)
+            .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 425, Short.MAX_VALUE)
         );
 
         jRadioButtonVS.addTab("Particiones", jPanelParticiones);
@@ -527,7 +574,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
                 .addComponent(jTextFieldNumeroProceso, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButtonFinalizarProcesos)
-                .addGap(0, 910, Short.MAX_VALUE))
+                .addGap(0, 930, Short.MAX_VALUE))
             .addComponent(jScrollPane6)
         );
         jPanelProcesosLayout.setVerticalGroup(
@@ -539,7 +586,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
                     .addComponent(jTextFieldNumeroProceso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButtonFinalizarProcesos)
                     .addComponent(jButtonActualizar))
-                .addGap(0, 15, Short.MAX_VALUE))
+                .addGap(0, 33, Short.MAX_VALUE))
         );
 
         jRadioButtonVS.addTab("Procesos", jPanelProcesos);
@@ -649,7 +696,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
             jPanelCPU2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelCPU2Layout.createSequentialGroup()
                 .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 597, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 499, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 578, Short.MAX_VALUE)
                 .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 464, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanelCPU2Layout.setVerticalGroup(
@@ -702,7 +749,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
                         .addComponent(jButtonSockets)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButtonRed)))
-                .addGap(0, 727, Short.MAX_VALUE))
+                .addGap(0, 806, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -711,7 +758,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
                     .addComponent(jButtonBateria)
                     .addComponent(jButtonSockets)
                     .addComponent(jButtonRed))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 373, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -763,7 +810,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
                     .addComponent(jButton2)
                     .addComponent(jButton3)
                     .addComponent(jButton4))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
                 .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 393, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -902,20 +949,6 @@ public class VetanaPrincipal extends javax.swing.JFrame {
         MatarprocesoPID();
     }//GEN-LAST:event_jButtonFinalizarProcesosActionPerformed
 
-    private void jRadioButtonAvanzadaRAMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonAvanzadaRAMActionPerformed
-        // TODO add your handling code here:
-        jTextAreaRAM.setText("");
-        mostrarmeminfoavanzada();
-        jRadioButtonSImpleRAM.setSelected(false);
-    }//GEN-LAST:event_jRadioButtonAvanzadaRAMActionPerformed
-
-    private void jRadioButtonSImpleRAMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonSImpleRAMActionPerformed
-        // TODO add your handling code here:
-        jTextAreaRAM.setText("");
-        mostrarmeminfosimple();
-        jRadioButtonAvanzadaRAM.setSelected(false);
-    }//GEN-LAST:event_jRadioButtonSImpleRAMActionPerformed
-
     private void jButtonBateriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBateriaActionPerformed
         // TODO add your handling code here:
         
@@ -1005,7 +1038,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
         if (title.equals("Informacion General")) {
             Guardx.print(jTextAreaInfoGeneral.getText());
         } else if (title.equals("RAM")) {
-            Guardx.print(jTextAreaRAM.getText());
+            //Guardx.print(jTextAreaRAM.getText());
         } else if (title.equals("CPU")) {
             //Guardx.print(jTextAreaCPU.getText());
         } else if (title.equals("Particiones")) {
@@ -1061,15 +1094,12 @@ public class VetanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenuOpciones;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanelCPU2;
     private javax.swing.JPanel jPanelInfoSis;
     private javax.swing.JPanel jPanelInicio;
     private javax.swing.JPanel jPanelParticiones;
     private javax.swing.JPanel jPanelProcesos;
     private javax.swing.JPanel jPanelRAM;
-    private javax.swing.JRadioButton jRadioButtonAvanzadaRAM;
-    private javax.swing.JRadioButton jRadioButtonSImpleRAM;
     private javax.swing.JTabbedPane jRadioButtonVS;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
@@ -1079,13 +1109,15 @@ public class VetanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
+    private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
+    private javax.swing.JTable jTableRAM;
+    private javax.swing.JTable jTableRAMSIMPLE;
     private javax.swing.JTextArea jTextAreaDispositivos;
     private javax.swing.JTextArea jTextAreaDistribucion;
     private javax.swing.JTextArea jTextAreaInfoGeneral;
     private javax.swing.JTextArea jTextAreaParticion;
-    private javax.swing.JTextArea jTextAreaRAM;
     private javax.swing.JTextField jTextFieldNumeroProceso;
     // End of variables declaration//GEN-END:variables
 }
