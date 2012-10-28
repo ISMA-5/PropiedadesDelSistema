@@ -53,7 +53,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
         informacionparticiones();
         informacionprocesos();
         inicio();
-    llenartabla();
+        llenartabla();
         llenarinfocpusimple();
         mostrarmeminfoavanzada();
         tamañofuente = 12;
@@ -241,7 +241,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
         return substring1;//se retorna la cadena
     }
     
-          private void llenartabla(){
+        private void llenartabla(){
           ArrayList<String> listcpuinfo = listas.getListcpuinfo();
           ArrayList<String> listcpufreq = listas.getListcpufreq();
         for (int i = 0; i < listcpuinfo.size() - 1; i++) {
@@ -301,6 +301,8 @@ public class VetanaPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         jMenuItem2 = new javax.swing.JMenuItem();
+        jMenu2 = new javax.swing.JMenu();
+        jMenuItem6 = new javax.swing.JMenuItem();
         jRadioButtonVS = new javax.swing.JTabbedPane();
         jPanelInicio = new javax.swing.JPanel();
         jLabelusername1 = new javax.swing.JLabel();
@@ -358,9 +360,11 @@ public class VetanaPrincipal extends javax.swing.JFrame {
         jMenuItemTam15 = new javax.swing.JMenuItem();
         jMenuItemTam16 = new javax.swing.JMenuItem();
         jMenuItemTam18 = new javax.swing.JMenuItem();
-        jMenuItemTam20 = new javax.swing.JMenuItem();
-        jMenuItemTam22 = new javax.swing.JMenuItem();
-        jMenuItemTam24 = new javax.swing.JMenuItem();
+        jMenu3 = new javax.swing.JMenu();
+        jMenuItem3 = new javax.swing.JMenuItem();
+        jMenuItem4 = new javax.swing.JMenuItem();
+        jMenuItem5 = new javax.swing.JMenuItem();
+        jMenuItem7 = new javax.swing.JMenuItem();
         jMenuPersonalizar = new javax.swing.JMenu();
         jMenuOpciones = new javax.swing.JMenu();
         jMenuItemMetal = new javax.swing.JMenuItem();
@@ -394,6 +398,10 @@ public class VetanaPrincipal extends javax.swing.JFrame {
         jMenuItem1 = new javax.swing.JMenuItem();
 
         jMenuItem2.setText("jMenuItem2");
+
+        jMenu2.setText("jMenu2");
+
+        jMenuItem6.setText("jMenuItem6");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -452,7 +460,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
         jPanelInicio.add(jButtonSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(1170, 320, 66, 35));
 
         jLabelInfoPrinciSist.setFont(new java.awt.Font("Nimbus Sans L", 1, 18)); // NOI18N
-        jLabelInfoPrinciSist.setForeground(new java.awt.Color(0, 0, 204));
+        jLabelInfoPrinciSist.setForeground(new java.awt.Color(1, 1, 1));
         jLabelInfoPrinciSist.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelInfoPrinciSist.setText("INFORMACIÓN PRINCIPAL DEL SISTEMA");
         jPanelInicio.add(jLabelInfoPrinciSist, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 30, 970, 29));
@@ -568,7 +576,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
             .addGroup(jPanelRAMLayout.createSequentialGroup()
                 .addGroup(jPanelRAMLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
@@ -925,31 +933,43 @@ public class VetanaPrincipal extends javax.swing.JFrame {
         });
         jMenuTamanio.add(jMenuItemTam18);
 
-        jMenuItemTam20.setText("20");
-        jMenuItemTam20.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItemTam20ActionPerformed(evt);
-            }
-        });
-        jMenuTamanio.add(jMenuItemTam20);
-
-        jMenuItemTam22.setText("22");
-        jMenuItemTam22.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItemTam22ActionPerformed(evt);
-            }
-        });
-        jMenuTamanio.add(jMenuItemTam22);
-
-        jMenuItemTam24.setText("24");
-        jMenuItemTam24.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItemTam24ActionPerformed(evt);
-            }
-        });
-        jMenuTamanio.add(jMenuItemTam24);
-
         jMenuFormato.add(jMenuTamanio);
+
+        jMenu3.setText("Fuente");
+
+        jMenuItem3.setText("SERIF");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
+        jMenu3.add(jMenuItem3);
+
+        jMenuItem4.setText("DIALOG_INPUT");
+        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem4ActionPerformed(evt);
+            }
+        });
+        jMenu3.add(jMenuItem4);
+
+        jMenuItem5.setText("MONOSPACED");
+        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem5ActionPerformed(evt);
+            }
+        });
+        jMenu3.add(jMenuItem5);
+
+        jMenuItem7.setText("SANS_SERIF");
+        jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem7ActionPerformed(evt);
+            }
+        });
+        jMenu3.add(jMenuItem7);
+
+        jMenuFormato.add(jMenu3);
 
         jMenuBar1.add(jMenuFormato);
 
@@ -1454,91 +1474,6 @@ public class VetanaPrincipal extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jMenuItemTam18ActionPerformed
 
-    private void jMenuItemTam20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemTam20ActionPerformed
-        // TODO add your handling code here:
-
-        tamañofuente = 20;
-        fuente = new Font(nombrefuente, estilo, tamañofuente);
-        jTextAreaInfoGeneral.setFont(fuente);
-        jScrollPane3.setFont(fuente);
-         jTableCPUuno.setFont(fuente);
-         jScrollPane1.setFont(fuente);
-        jTableCPUdos.setFont(fuente);
-         jScrollPane3.setFont(fuente);
-        jPanel2.setFont(fuente);
-        jTextAreaDispositivos.setFont(fuente);
-        jTextAreaParticion.setFont(fuente);
-        jTableRAMSIMPLE.setFont(fuente);
-        jTableRAM.setFont(fuente);
-        jListProcesos.setFont(fuente);
-         jLabelusername1.setFont(fuente);
-        jLabelipdireccion1.setFont(fuente);
-        jLabelInfoPrinciSist.setFont(fuente);
-        jLabelmemtotal1.setFont(fuente);
-        jLabelmemcache1.setFont(fuente);
-        jLabelmodcpu1.setFont(fuente);
-        jLabelvelocpu1.setFont(fuente);
-        jButtonSalir.setFont(fuente);
-        jTextAreaDistribucion.setFont(fuente);
-
-    }//GEN-LAST:event_jMenuItemTam20ActionPerformed
-
-    private void jMenuItemTam22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemTam22ActionPerformed
-        // TODO add your handling code here:
-        tamañofuente = 22;
-        fuente = new Font(nombrefuente, estilo, tamañofuente);
-        jTextAreaInfoGeneral.setFont(fuente);
-         jTableCPUuno.setFont(fuente);
-        jTableCPUdos.setFont(fuente);
-        jTextAreaParticion.setFont(fuente);
-        jTableRAMSIMPLE.setFont(fuente);
-         jScrollPane3.setFont(fuente);
-        jPanel2.setFont(fuente);
-        jTextAreaDispositivos.setFont(fuente);
-        jTableRAM.setFont(fuente);
-        jListProcesos.setFont(fuente);
-        jScrollPane1.setFont(fuente);
-         jLabelusername1.setFont(fuente);
-         jScrollPane3.setFont(fuente);
-        jLabelipdireccion1.setFont(fuente);
-        jLabelInfoPrinciSist.setFont(fuente);
-        jLabelmemtotal1.setFont(fuente);
-        jLabelmemcache1.setFont(fuente);
-        jLabelmodcpu1.setFont(fuente);
-        jLabelvelocpu1.setFont(fuente);
-        jButtonSalir.setFont(fuente);
-
-    }//GEN-LAST:event_jMenuItemTam22ActionPerformed
-
-    private void jMenuItemTam24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemTam24ActionPerformed
-        // TODO add your handling code here:
-        tamañofuente = 24;
-        fuente = new Font(nombrefuente, estilo, tamañofuente);
-        jTextAreaInfoGeneral.setFont(fuente);
-         jTableCPUuno.setFont(fuente);
-          jScrollPane3.setFont(fuente);
-        jPanel2.setFont(fuente);
-        jTextAreaDispositivos.setFont(fuente);
-         jScrollPane3.setFont(fuente);
-        jTableCPUdos.setFont(fuente);
-        jScrollPane1.setFont(fuente);
-        jTableRAMSIMPLE.setFont(fuente);
-        jTextAreaParticion.setFont(fuente);
-        jTableRAM.setFont(fuente);
-         jLabelusername1.setFont(fuente);
-        jLabelipdireccion1.setFont(fuente);
-        jListProcesos.setFont(fuente);
-        jLabelInfoPrinciSist.setFont(fuente);
-        jLabelmemtotal1.setFont(fuente);
-        jLabelmemcache1.setFont(fuente);
-        jLabelmodcpu1.setFont(fuente);
-        jLabelvelocpu1.setFont(fuente);
-        jTextAreaDistribucion.setFont(fuente);
-        jTextAreaDistribucion.setFont(fuente);
-        jButtonSalir.setFont(fuente);
-
-    }//GEN-LAST:event_jMenuItemTam24ActionPerformed
-
     private void jMenuItemTam13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemTam13ActionPerformed
         // TODO add your handling code here:
         tamañofuente = 13;
@@ -1828,7 +1763,7 @@ jLabelvelocpu1.setBackground(azul);
         jLabelmemtotal1.setBackground(newColor);
         jLabelmemcache1.setBackground(newColor);
         jLabelmodcpu1.setBackground(newColor);
-        jLabelvelocpu1.setForeground(newColor);
+        jLabelvelocpu1.setBackground(newColor);
         }
         colores.getSelectionModel().addChangeListener(
             new ChangeListener() {
@@ -1845,6 +1780,7 @@ jLabelvelocpu1.setBackground(azul);
         
         jTextAreaInfoGeneral.setForeground(Color.decode("000000"));
         jTableCPUuno.setForeground(Color.decode("000000"));
+        jTextAreaDispositivos.setForeground(Color.decode("000000"));
         jTableCPUdos.setForeground(Color.decode("000000"));
          jPanel2.setForeground(Color.decode("000000"));
         jTextAreaDistribucion.setForeground(Color.decode("000000"));
@@ -1861,13 +1797,13 @@ jLabelvelocpu1.setBackground(azul);
         jLabelmemcache1.setForeground(Color.decode("000000"));
         jLabelmodcpu1.setForeground(Color.decode("000000"));
         jLabelvelocpu1.setForeground(Color.decode("000000"));
-        jTextAreaDispositivos.setForeground(Color.decode("000000"));
     }//GEN-LAST:event_jMenuItemNegroTextActionPerformed
 
     private void jMenuItemRojo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemRojo1ActionPerformed
         // TODO add your handling code here:
         Color rojo = new Color(0xff0000);
         jTextAreaInfoGeneral.setForeground(rojo);
+        jTextAreaDispositivos.setForeground(rojo);
         jLabelvelocpu1.setForeground(rojo);
         jPanel2.setForeground(rojo);
         jTextAreaDistribucion.setForeground(rojo);
@@ -1885,7 +1821,6 @@ jLabelvelocpu1.setBackground(azul);
         jLabelmemtotal1.setForeground(rojo);
         jLabelmemcache1.setForeground(rojo);
         jLabelmodcpu1.setForeground(rojo);
-        jTextAreaDispositivos.setForeground(rojo);
     }//GEN-LAST:event_jMenuItemRojo1ActionPerformed
 
     private void jMenuItemAqua1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemAqua1ActionPerformed
@@ -1893,8 +1828,8 @@ jLabelvelocpu1.setBackground(azul);
         Color aqua = new Color(0, 255, 255);
           jTextAreaInfoGeneral.setForeground(aqua);
         jTableCPUuno.setForeground(aqua);
-        jPanel2.setForeground(aqua);
         jTextAreaDispositivos.setForeground(aqua);
+        jPanel2.setForeground(aqua);
         jTextAreaDistribucion.setForeground(aqua);
         jTableCPUdos.setForeground(aqua);
         jTextAreaParticion.setForeground(aqua);
@@ -1918,8 +1853,8 @@ jLabelvelocpu1.setBackground(azul);
            jTextAreaInfoGeneral.setForeground(naranja);
         jTableCPUuno.setForeground(naranja);
         jTableCPUdos.setForeground(naranja);
-        jTextAreaParticion.setForeground(naranja);
         jTextAreaDispositivos.setForeground(naranja);
+        jTextAreaParticion.setForeground(naranja);
         jPanel2.setForeground(naranja);
         jTextAreaDistribucion.setForeground(naranja);
         jTableRAM.setForeground(naranja);
@@ -1942,11 +1877,11 @@ jLabelvelocpu1.setBackground(azul);
         jTableCPUuno.setForeground(Color.YELLOW);
         jTableCPUdos.setForeground(Color.YELLOW);
         jPanel2.setForeground(Color.YELLOW);
+        jTextAreaDispositivos.setForeground(Color.YELLOW);
         jTextAreaDistribucion.setForeground(Color.YELLOW);
         jTextAreaParticion.setForeground(Color.YELLOW);
         jTableRAM.setForeground(Color.YELLOW);
         jTableRAMSIMPLE.setForeground(Color.YELLOW);
-        jTextAreaDispositivos.setForeground(Color.YELLOW);
         jScrollPane3.setForeground(Color.YELLOW);
         jListProcesos.setForeground(Color.YELLOW);
         jLabelvelocpu1.setForeground(Color.YELLOW);
@@ -1989,10 +1924,10 @@ jLabelvelocpu1.setBackground(azul);
         jTextAreaInfoGeneral.setForeground(marronRosaseo);
         jPanel2.setForeground(marronRosaseo);
         jTextAreaDistribucion.setForeground(marronRosaseo);
+        jTextAreaDispositivos.setForeground(marronRosaseo);
         jTableCPUuno.setForeground(marronRosaseo);
         jTableCPUdos.setForeground(marronRosaseo);
         jTextAreaParticion.setForeground(marronRosaseo);
-        jTextAreaDispositivos.setForeground(marronRosaseo);
         jTableRAM.setForeground(marronRosaseo);
         jTableRAMSIMPLE.setForeground(marronRosaseo);
         jLabelvelocpu1.setForeground(marronRosaseo);
@@ -2012,9 +1947,9 @@ jLabelvelocpu1.setBackground(azul);
         Color verde = new Color(0x00b050);
         jTextAreaInfoGeneral.setForeground(verde);
         jTableCPUuno.setForeground(verde);
+        jTextAreaDispositivos.setForeground(verde);
         jPanel2.setForeground(verde);
         jTextAreaDistribucion.setForeground(verde);
-        jTextAreaDispositivos.setForeground(verde);
         jTableCPUdos.setForeground(verde);
         jTextAreaParticion.setForeground(verde);
         jTableRAM.setForeground(verde);
@@ -2037,8 +1972,8 @@ jLabelvelocpu1.setBackground(azul);
            jTextAreaInfoGeneral.setForeground(verde_c);
         jTableCPUuno.setForeground(verde_c);
         jTableCPUdos.setForeground(verde_c);
-        jPanel2.setForeground(verde_c);
         jTextAreaDispositivos.setForeground(verde_c);
+        jPanel2.setForeground(verde_c);
         jTextAreaDistribucion.setForeground(verde_c);
         jTextAreaParticion.setForeground(verde_c);
         jTableRAM.setForeground(verde_c);
@@ -2060,9 +1995,9 @@ jLabelvelocpu1.setBackground(azul);
         // TODO add your handling code here:
         Color salmon = new Color(255, 160, 122);
         jTextAreaInfoGeneral.setForeground(salmon);
-        jTextAreaDispositivos.setForeground(salmon);
         jTextAreaInfoGeneral.setForeground(salmon);
         jPanel2.setForeground(salmon);
+        jTextAreaDispositivos.setForeground(salmon);
         jTextAreaDistribucion.setForeground(salmon);
         jTableCPUuno.setForeground(salmon);
         jTableCPUdos.setForeground(salmon);
@@ -2117,6 +2052,129 @@ jLabelvelocpu1.setBackground(azul);
                 }
             });
     }//GEN-LAST:event_jMenuItemMasColores1ActionPerformed
+
+    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+        // TODO add your handling code here:
+        
+         nombrefuente  = Font.MONOSPACED;
+        fuente = new Font(nombrefuente, estilo, tamañofuente);
+
+      
+             jTextAreaInfoGeneral.setFont(fuente);
+        jTextAreaInfoGeneral.setFont(fuente);
+        jPanel2.setFont(fuente);
+        jTextAreaDispositivos.setFont(fuente);
+        jTextAreaDistribucion.setFont(fuente);
+        jTextAreaInfoGeneral.setFont(fuente);
+        jTableCPUuno.setFont(fuente);
+        jLabelvelocpu1.setFont(fuente);
+        jTableCPUdos.setFont(fuente);
+        jTextAreaParticion.setFont(fuente);
+        jTableRAM.setFont(fuente);
+        jTableRAMSIMPLE.setFont(fuente);
+        jScrollPane3.setFont(fuente);
+        jListProcesos.setFont(fuente);
+        jLabelusername1.setFont(fuente);
+        jLabelipdireccion1.setFont(fuente);
+        jLabelInfoPrinciSist.setFont(fuente);
+        jLabelmemtotal1.setFont(fuente);
+        jLabelmemtotal1.setFont(fuente);
+        jLabelmemcache1.setFont(fuente);
+        jLabelmodcpu1.setFont(fuente);
+    }//GEN-LAST:event_jMenuItem5ActionPerformed
+
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+        // TODO add your handling code here:
+        
+        nombrefuente  = Font.SERIF;
+      fuente = new Font(nombrefuente, estilo, tamañofuente);
+     
+      
+             jTextAreaInfoGeneral.setFont(fuente);
+        jTextAreaInfoGeneral.setFont(fuente);
+        jPanel2.setFont(fuente);
+        jTextAreaDispositivos.setFont(fuente);
+        jTextAreaDistribucion.setFont(fuente);
+        jTextAreaInfoGeneral.setFont(fuente);
+        jTableCPUuno.setFont(fuente);
+        jLabelvelocpu1.setFont(fuente);
+        jTableCPUdos.setFont(fuente);
+        jTextAreaParticion.setFont(fuente);
+        jTableRAM.setFont(fuente);
+        jTableRAMSIMPLE.setFont(fuente);
+        jScrollPane3.setFont(fuente);
+        jListProcesos.setFont(fuente);
+        jLabelusername1.setFont(fuente);
+        jLabelipdireccion1.setFont(fuente);
+        jLabelInfoPrinciSist.setFont(fuente);
+        jLabelmemtotal1.setFont(fuente);
+        jLabelmemtotal1.setFont(fuente);
+        jLabelmemcache1.setFont(fuente);
+        jLabelmodcpu1.setFont(fuente);
+     
+      
+     
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
+
+    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+        // TODO add your handling code here:
+        
+         nombrefuente  = Font.DIALOG_INPUT;
+        fuente = new Font(nombrefuente, estilo, tamañofuente);
+     
+        
+             jTextAreaInfoGeneral.setFont(fuente);
+        jTextAreaInfoGeneral.setFont(fuente);
+        jPanel2.setFont(fuente);
+        jTextAreaDispositivos.setFont(fuente);
+        jTextAreaDistribucion.setFont(fuente);
+        jTextAreaInfoGeneral.setFont(fuente);
+        jTableCPUuno.setFont(fuente);
+        jLabelvelocpu1.setFont(fuente);
+        jTableCPUdos.setFont(fuente);
+        jTextAreaParticion.setFont(fuente);
+        jTableRAM.setFont(fuente);
+        jTableRAMSIMPLE.setFont(fuente);
+        jScrollPane3.setFont(fuente);
+        jListProcesos.setFont(fuente);
+        jLabelusername1.setFont(fuente);
+        jLabelipdireccion1.setFont(fuente);
+        jLabelInfoPrinciSist.setFont(fuente);
+        jLabelmemtotal1.setFont(fuente);
+        jLabelmemtotal1.setFont(fuente);
+        jLabelmemcache1.setFont(fuente);
+        jLabelmodcpu1.setFont(fuente);
+    }//GEN-LAST:event_jMenuItem4ActionPerformed
+
+    private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
+        // TODO add your handling code here:
+        
+               nombrefuente  = Font.SANS_SERIF;
+        fuente = new Font(nombrefuente, estilo, tamañofuente);
+      
+        
+             jTextAreaInfoGeneral.setFont(fuente);
+        jTextAreaInfoGeneral.setFont(fuente);
+        jPanel2.setFont(fuente);
+        jTextAreaDispositivos.setFont(fuente);
+        jTextAreaDistribucion.setFont(fuente);
+        jTextAreaInfoGeneral.setFont(fuente);
+        jTableCPUuno.setFont(fuente);
+        jLabelvelocpu1.setFont(fuente);
+        jTableCPUdos.setFont(fuente);
+        jTextAreaParticion.setFont(fuente);
+        jTableRAM.setFont(fuente);
+        jTableRAMSIMPLE.setFont(fuente);
+        jScrollPane3.setFont(fuente);
+        jListProcesos.setFont(fuente);
+        jLabelusername1.setFont(fuente);
+        jLabelipdireccion1.setFont(fuente);
+        jLabelInfoPrinciSist.setFont(fuente);
+        jLabelmemtotal1.setFont(fuente);
+        jLabelmemtotal1.setFont(fuente);
+        jLabelmemcache1.setFont(fuente);
+        jLabelmodcpu1.setFont(fuente);
+    }//GEN-LAST:event_jMenuItem7ActionPerformed
 
     private void guardar() {
         String title = jRadioButtonVS.getTitleAt(jRadioButtonVS.getSelectedIndex());
@@ -2184,6 +2242,8 @@ jLabelvelocpu1.setBackground(azul);
     private javax.swing.JLabel jLabelvelocpu1;
     private javax.swing.JList jListProcesos;
     private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenuArchivo;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenu jMenuColorTexto;
@@ -2191,6 +2251,11 @@ jLabelvelocpu1.setBackground(azul);
     private javax.swing.JMenu jMenuFormato;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuItem4;
+    private javax.swing.JMenuItem jMenuItem5;
+    private javax.swing.JMenuItem jMenuItem6;
+    private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItemAmarillo1;
     private javax.swing.JMenuItem jMenuItemAqua;
     private javax.swing.JMenuItem jMenuItemAqua1;
@@ -2220,9 +2285,6 @@ jLabelvelocpu1.setBackground(azul);
     private javax.swing.JMenuItem jMenuItemTam15;
     private javax.swing.JMenuItem jMenuItemTam16;
     private javax.swing.JMenuItem jMenuItemTam18;
-    private javax.swing.JMenuItem jMenuItemTam20;
-    private javax.swing.JMenuItem jMenuItemTam22;
-    private javax.swing.JMenuItem jMenuItemTam24;
     private javax.swing.JMenuItem jMenuItemVerde1;
     private javax.swing.JMenuItem jMenuItemVerdeClaro1;
     private javax.swing.JMenuItem jMenuItemVerdeOliva;
