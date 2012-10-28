@@ -17,6 +17,8 @@ public class PropiedadesDelSistema {
      */
     public static void main(String[] args) throws IOException {
         // TODO code application logic here
+      // propiedadesdelsistema.LlenarListas l = new propiedadesdelsistema.LlenarListas();
+       // l.setVisible(true);
         new VetanaPrincipal().setVisible(true);
     }
     
