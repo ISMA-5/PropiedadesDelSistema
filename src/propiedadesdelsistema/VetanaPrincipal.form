@@ -30,6 +30,9 @@
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItemGUuardar">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/botones/save.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Guardar como..."/>
               </Properties>
               <Events>
@@ -38,6 +41,9 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItemCerrar_Aplicacion">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/botones/salir.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Cerrar Aplicacion"/>
               </Properties>
               <Events>
@@ -103,6 +109,9 @@
             </Menu>
             <Menu class="javax.swing.JMenu" name="jMenu3">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/botones/fontsize.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Fuente"/>
               </Properties>
               <SubComponents>
@@ -150,11 +159,17 @@
           <SubComponents>
             <Menu class="javax.swing.JMenu" name="jMenuOpciones">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/botones/tema2.gif"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Temas"/>
               </Properties>
               <SubComponents>
                 <MenuItem class="javax.swing.JMenuItem" name="jMenuItemMetal">
                   <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/botones/metal2.gif"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Metal"/>
                   </Properties>
                   <Events>
@@ -163,6 +178,9 @@
                 </MenuItem>
                 <MenuItem class="javax.swing.JMenuItem" name="jMenuItemNimbus">
                   <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/botones/nimbus2.gif"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Nimbus"/>
                   </Properties>
                   <Events>
@@ -171,6 +189,9 @@
                 </MenuItem>
                 <MenuItem class="javax.swing.JMenuItem" name="jMenuItemCDE_Motif">
                   <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/botones/cedmotif2.gif"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="CDE/Motif"/>
                   </Properties>
                   <Events>
@@ -179,6 +200,9 @@
                 </MenuItem>
                 <MenuItem class="javax.swing.JMenuItem" name="jMenuItemGTK">
                   <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/botones/gtk2.gif"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="GTK+(Por Defecto)"/>
                   </Properties>
                   <Events>
@@ -441,6 +465,9 @@
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItem1">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/botones/informacion2.gif"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Informacion"/>
               </Properties>
               <Events>
@@ -725,12 +752,12 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jScrollPane1" alignment="0" pref="1643" max="32767" attributes="0"/>
+                  <Component id="jScrollPane1" alignment="0" pref="1725" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jScrollPane1" alignment="0" pref="410" max="32767" attributes="0"/>
+                  <Component id="jScrollPane1" alignment="0" pref="425" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
           </Layout>
@@ -766,7 +793,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="jScrollPane9" min="-2" pref="581" max="-2" attributes="0"/>
-                      <EmptySpace pref="510" max="32767" attributes="0"/>
+                      <EmptySpace pref="592" max="32767" attributes="0"/>
                       <Component id="jScrollPane2" min="-2" pref="552" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -778,7 +805,7 @@
                           <Component id="jScrollPane9" min="-2" max="-2" attributes="0"/>
                           <Component id="jScrollPane2" min="-2" pref="151" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="3" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -956,12 +983,12 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jScrollPane4" alignment="0" pref="1643" max="32767" attributes="0"/>
+                  <Component id="jScrollPane4" alignment="0" pref="1725" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jScrollPane4" alignment="0" pref="410" max="32767" attributes="0"/>
+                  <Component id="jScrollPane4" alignment="0" pref="425" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
           </Layout>
@@ -1002,7 +1029,7 @@
                       <Component id="jTextFieldNumeroProceso" min="-2" pref="139" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="jButtonFinalizarProcesos" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="993" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="1016" max="32767" attributes="0"/>
                   </Group>
                   <Component id="jScrollPane6" alignment="0" max="32767" attributes="0"/>
               </Group>
@@ -1017,7 +1044,7 @@
                           <Component id="jButtonFinalizarProcesos" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jButtonActualizar" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="0" pref="15" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="33" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1076,7 +1103,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="jScrollPane5" min="-2" pref="597" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" pref="582" max="32767" attributes="0"/>
+                      <EmptySpace type="unrelated" pref="664" max="32767" attributes="0"/>
                       <Component id="jScrollPane7" min="-2" pref="464" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -1265,7 +1292,7 @@
                           <Component id="jButtonSockets" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jButtonRed" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="9" max="32767" attributes="0"/>
+                      <EmptySpace pref="27" max="32767" attributes="0"/>
                       <Component id="jScrollPane3" min="-2" pref="373" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -1333,7 +1360,7 @@
                       <Component id="jButton3" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jButton4" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="1304" max="32767" attributes="0"/>
+                      <EmptySpace pref="1307" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1345,7 +1372,7 @@
                           <Component id="jButton3" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jButton4" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace pref="7" max="32767" attributes="0"/>
                       <Component id="jScrollPane8" min="-2" pref="393" max="-2" attributes="0"/>
                   </Group>
               </Group>

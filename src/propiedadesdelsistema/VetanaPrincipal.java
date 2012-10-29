@@ -241,7 +241,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
         return substring1;//se retorna la cadena
     }
     
-        private void llenartabla(){
+         private void llenartabla(){
           ArrayList<String> listcpuinfo = listas.getListcpuinfo();
           ArrayList<String> listcpufreq = listas.getListcpufreq();
         for (int i = 0; i < listcpuinfo.size() - 1; i++) {
@@ -481,11 +481,11 @@ public class VetanaPrincipal extends javax.swing.JFrame {
         jPanelInfoSis.setLayout(jPanelInfoSisLayout);
         jPanelInfoSisLayout.setHorizontalGroup(
             jPanelInfoSisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1643, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1725, Short.MAX_VALUE)
         );
         jPanelInfoSisLayout.setVerticalGroup(
             jPanelInfoSisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 410, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 425, Short.MAX_VALUE)
         );
 
         jRadioButtonVS.addTab("Informacion General", jPanelInfoSis);
@@ -568,7 +568,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
             jPanelRAMLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelRAMLayout.createSequentialGroup()
                 .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 581, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 510, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 592, Short.MAX_VALUE)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 552, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanelRAMLayout.setVerticalGroup(
@@ -577,7 +577,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
                 .addGroup(jPanelRAMLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 3, Short.MAX_VALUE))
         );
 
         jRadioButtonVS.addTab("RAM", jPanelRAM);
@@ -590,11 +590,11 @@ public class VetanaPrincipal extends javax.swing.JFrame {
         jPanelParticiones.setLayout(jPanelParticionesLayout);
         jPanelParticionesLayout.setHorizontalGroup(
             jPanelParticionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 1643, Short.MAX_VALUE)
+            .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 1725, Short.MAX_VALUE)
         );
         jPanelParticionesLayout.setVerticalGroup(
             jPanelParticionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 410, Short.MAX_VALUE)
+            .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 425, Short.MAX_VALUE)
         );
 
         jRadioButtonVS.addTab("Particiones", jPanelParticiones);
@@ -628,7 +628,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
                 .addComponent(jTextFieldNumeroProceso, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButtonFinalizarProcesos)
-                .addGap(0, 993, Short.MAX_VALUE))
+                .addGap(0, 1016, Short.MAX_VALUE))
             .addComponent(jScrollPane6)
         );
         jPanelProcesosLayout.setVerticalGroup(
@@ -640,7 +640,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
                     .addComponent(jTextFieldNumeroProceso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButtonFinalizarProcesos)
                     .addComponent(jButtonActualizar))
-                .addGap(0, 15, Short.MAX_VALUE))
+                .addGap(0, 33, Short.MAX_VALUE))
         );
 
         jRadioButtonVS.addTab("Procesos", jPanelProcesos);
@@ -750,7 +750,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
             jPanelCPU2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelCPU2Layout.createSequentialGroup()
                 .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 597, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 582, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 664, Short.MAX_VALUE)
                 .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 464, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanelCPU2Layout.setVerticalGroup(
@@ -810,7 +810,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
                     .addComponent(jButtonBateria)
                     .addComponent(jButtonSockets)
                     .addComponent(jButtonRed))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 373, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -853,7 +853,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
                 .addComponent(jButton3)
                 .addGap(18, 18, 18)
                 .addComponent(jButton4)
-                .addContainerGap(1304, Short.MAX_VALUE))
+                .addContainerGap(1307, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -862,7 +862,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
                     .addComponent(jButton2)
                     .addComponent(jButton3)
                     .addComponent(jButton4))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
                 .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 393, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -870,6 +870,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
 
         jMenuArchivo.setText("Archivo");
 
+        jMenuItemGUuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/save.png"))); // NOI18N
         jMenuItemGUuardar.setText("Guardar como...");
         jMenuItemGUuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -878,6 +879,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
         });
         jMenuArchivo.add(jMenuItemGUuardar);
 
+        jMenuItemCerrar_Aplicacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/salir.png"))); // NOI18N
         jMenuItemCerrar_Aplicacion.setText("Cerrar Aplicacion");
         jMenuItemCerrar_Aplicacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -935,6 +937,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
 
         jMenuFormato.add(jMenuTamanio);
 
+        jMenu3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/fontsize.png"))); // NOI18N
         jMenu3.setText("Fuente");
 
         jMenuItem3.setText("SERIF");
@@ -976,8 +979,10 @@ public class VetanaPrincipal extends javax.swing.JFrame {
         jMenuPersonalizar.setText("Personalizar");
         jMenuPersonalizar.setFocusable(false);
 
+        jMenuOpciones.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/tema2.gif"))); // NOI18N
         jMenuOpciones.setText("Temas");
 
+        jMenuItemMetal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/metal2.gif"))); // NOI18N
         jMenuItemMetal.setText("Metal");
         jMenuItemMetal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -986,6 +991,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
         });
         jMenuOpciones.add(jMenuItemMetal);
 
+        jMenuItemNimbus.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/nimbus2.gif"))); // NOI18N
         jMenuItemNimbus.setText("Nimbus");
         jMenuItemNimbus.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -994,6 +1000,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
         });
         jMenuOpciones.add(jMenuItemNimbus);
 
+        jMenuItemCDE_Motif.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/cedmotif2.gif"))); // NOI18N
         jMenuItemCDE_Motif.setText("CDE/Motif");
         jMenuItemCDE_Motif.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1002,6 +1009,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
         });
         jMenuOpciones.add(jMenuItemCDE_Motif);
 
+        jMenuItemGTK.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/gtk2.gif"))); // NOI18N
         jMenuItemGTK.setText("GTK+(Por Defecto)");
         jMenuItemGTK.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1213,6 +1221,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
 
         jMenu1.setText("Acerca de...");
 
+        jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/informacion2.gif"))); // NOI18N
         jMenuItem1.setText("Informacion");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
