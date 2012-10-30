@@ -5,7 +5,6 @@
 package propiedadesdelsistema;
 
 import java.awt.Color;
-import java.awt.Desktop;
 import java.awt.Font;
 import java.io.BufferedReader;
 import java.io.File;
@@ -13,8 +12,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.DefaultListModel;
 import javax.swing.JColorChooser;
 import javax.swing.JFileChooser;
@@ -56,7 +53,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
         informacionparticiones();
         informacionprocesos();
         inicio();
-        llenartabla();
+        //llenartabla();
         llenarinfocpusimple();
         mostrarmeminfoavanzada();
         tamañofuente = 12;
@@ -244,7 +241,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
         return substring1;//se retorna la cadena
     }
     
-        private void llenartabla(){
+        /*private void llenartabla(){
           ArrayList<String> listcpuinfo = listas.getListcpuinfo();
           ArrayList<String> listcpufreq = listas.getListcpufreq();
         for (int i = 0; i < listcpuinfo.size() - 1; i++) {
@@ -265,7 +262,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
         model.setValueAt(cpu3, 56, 1);
         model.setValueAt(cpu4, 57, 1);
      }
-
+*/
     private void MatarprocesoPID(){
         
         String osName = System.getProperty("os.name");
@@ -403,7 +400,6 @@ public class VetanaPrincipal extends javax.swing.JFrame {
         jMenuItemMasColores1 = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem8 = new javax.swing.JMenuItem();
 
         jMenuItem2.setText("jMenuItem2");
 
@@ -933,7 +929,6 @@ public class VetanaPrincipal extends javax.swing.JFrame {
 
         jMenuFormato.setText("Formato");
 
-        jMenuTamanio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/tamaño.jpg"))); // NOI18N
         jMenuTamanio.setText("Tamaño");
 
         jMenuItemTam13.setBackground(new java.awt.Color(247, 250, 251));
@@ -1062,7 +1057,6 @@ public class VetanaPrincipal extends javax.swing.JFrame {
 
         jMenuPersonalizar.add(jMenuOpciones);
 
-        jMenuFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/tipo de color.jpg"))); // NOI18N
         jMenuFondo.setText("Color de Fondo");
 
         jMenuItemNegro1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconosColores/negro.png"))); // NOI18N
@@ -1157,7 +1151,6 @@ public class VetanaPrincipal extends javax.swing.JFrame {
 
         jMenuPersonalizar.add(jMenuFondo);
 
-        jMenuColorTexto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/tipo de letra.jpg"))); // NOI18N
         jMenuColorTexto.setText("Color de Texto");
 
         jMenuItemNegroText.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconosColores/negro.png"))); // NOI18N
@@ -1263,25 +1256,16 @@ public class VetanaPrincipal extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenuPersonalizar);
 
-        jMenu1.setText("Ayuda");
+        jMenu1.setText("Acerca de...");
 
         jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/informacion2.gif"))); // NOI18N
-        jMenuItem1.setText("Acerca de ...");
+        jMenuItem1.setText("Informacion");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem1ActionPerformed(evt);
             }
         });
         jMenu1.add(jMenuItem1);
-
-        jMenuItem8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/ayuda.gif"))); // NOI18N
-        jMenuItem8.setText("manual");
-        jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem8ActionPerformed(evt);
-            }
-        });
-        jMenu1.add(jMenuItem8);
 
         jMenuBar1.add(jMenu1);
 
@@ -2252,17 +2236,6 @@ jLabelvelocpu1.setBackground(azul);
     mostrarmSockets();  
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
-       
-        File path = new File("manual.pdf");
-            try {
-                Desktop.getDesktop().open(path);
-            } catch (IOException ex) {
-                Logger.getLogger(VetanaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        
-    }//GEN-LAST:event_jMenuItem8ActionPerformed
-
     private void guardar() {
         String title = jRadioButtonVS.getTitleAt(jRadioButtonVS.getSelectedIndex());
         try {
@@ -2344,7 +2317,6 @@ jLabelvelocpu1.setBackground(azul);
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
-    private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JMenuItem jMenuItemAmarillo1;
     private javax.swing.JMenuItem jMenuItemAqua;
     private javax.swing.JMenuItem jMenuItemAqua1;
