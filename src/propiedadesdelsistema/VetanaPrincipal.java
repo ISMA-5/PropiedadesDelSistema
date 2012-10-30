@@ -204,7 +204,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
         for (int i = 0; i < listmeminfo.size(); i++) {
             String valorDepurados = valorDepurado(listmeminfo.get(i)+ "\n");
             TableModel modelo = jTableRAM.getModel();
-            modelo.setValueAt(valorDepurados, i, 0);
+            modelo.setValueAt(valorDepurados, i, 1);
         }
     }
     
@@ -241,7 +241,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
         return substring1;//se retorna la cadena
     }
     
-         private void llenartabla(){
+         public void llenartabla(){
           ArrayList<String> listcpuinfo = listas.getListcpuinfo();
           ArrayList<String> listcpufreq = listas.getListcpufreq();
         for (int i = 0; i < listcpuinfo.size() - 1; i++) {
@@ -481,7 +481,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
         jPanelInfoSis.setLayout(jPanelInfoSisLayout);
         jPanelInfoSisLayout.setHorizontalGroup(
             jPanelInfoSisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1725, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1679, Short.MAX_VALUE)
         );
         jPanelInfoSisLayout.setVerticalGroup(
             jPanelInfoSisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -568,8 +568,9 @@ public class VetanaPrincipal extends javax.swing.JFrame {
             jPanelRAMLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelRAMLayout.createSequentialGroup()
                 .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 581, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 592, Short.MAX_VALUE)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 552, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(101, 101, 101)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(748, Short.MAX_VALUE))
         );
         jPanelRAMLayout.setVerticalGroup(
             jPanelRAMLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -590,7 +591,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
         jPanelParticiones.setLayout(jPanelParticionesLayout);
         jPanelParticionesLayout.setHorizontalGroup(
             jPanelParticionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 1725, Short.MAX_VALUE)
+            .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 1679, Short.MAX_VALUE)
         );
         jPanelParticionesLayout.setVerticalGroup(
             jPanelParticionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -628,7 +629,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
                 .addComponent(jTextFieldNumeroProceso, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButtonFinalizarProcesos)
-                .addGap(0, 1016, Short.MAX_VALUE))
+                .addGap(0, 970, Short.MAX_VALUE))
             .addComponent(jScrollPane6)
         );
         jPanelProcesosLayout.setVerticalGroup(
@@ -750,7 +751,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
             jPanelCPU2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelCPU2Layout.createSequentialGroup()
                 .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 597, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 664, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 618, Short.MAX_VALUE)
                 .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 464, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanelCPU2Layout.setVerticalGroup(
@@ -800,7 +801,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
                 .addComponent(jButtonSockets)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButtonRed)
-                .addGap(0, 1351, Short.MAX_VALUE))
+                .addGap(0, 1305, Short.MAX_VALUE))
             .addComponent(jScrollPane3)
         );
         jPanel2Layout.setVerticalGroup(
@@ -853,7 +854,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
                 .addComponent(jButton3)
                 .addGap(18, 18, 18)
                 .addComponent(jButton4)
-                .addContainerGap(1307, Short.MAX_VALUE))
+                .addContainerGap(1261, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1238,7 +1239,9 @@ public class VetanaPrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jRadioButtonVS)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jRadioButtonVS, javax.swing.GroupLayout.PREFERRED_SIZE, 1684, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 46, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
