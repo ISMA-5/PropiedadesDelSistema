@@ -318,7 +318,6 @@ public class VetanaPrincipal extends javax.swing.JFrame {
         jLabelInfoPrinciSist = new javax.swing.JLabel();
         jLabelLogoTec = new javax.swing.JLabel();
         jLabelLogoNetbeans = new javax.swing.JLabel();
-        jButton5 = new javax.swing.JButton();
         jPanelInfoSis = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextAreaInfoGeneral = new javax.swing.JTextArea();
@@ -404,6 +403,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
         jMenuItemMasColores1 = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem8 = new javax.swing.JMenuItem();
 
         jMenuItem2.setText("jMenuItem2");
 
@@ -478,14 +478,6 @@ public class VetanaPrincipal extends javax.swing.JFrame {
 
         jLabelLogoNetbeans.setIcon(new javax.swing.ImageIcon(getClass().getResource("/propiedadesdelsistema/logo.jpg"))); // NOI18N
         jPanelInicio.add(jLabelLogoNetbeans, new org.netbeans.lib.awtextra.AbsoluteConstraints(1240, 260, 100, 110));
-
-        jButton5.setText("manual");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
-            }
-        });
-        jPanelInicio.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, -1, -1));
 
         jRadioButtonVS.addTab("Inicio", jPanelInicio);
 
@@ -1271,16 +1263,25 @@ public class VetanaPrincipal extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenuPersonalizar);
 
-        jMenu1.setText("Acerca de...");
+        jMenu1.setText("Ayuda");
 
         jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/informacion2.gif"))); // NOI18N
-        jMenuItem1.setText("Informacion");
+        jMenuItem1.setText("Acerca de ...");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem1ActionPerformed(evt);
             }
         });
         jMenu1.add(jMenuItem1);
+
+        jMenuItem8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/ayuda.gif"))); // NOI18N
+        jMenuItem8.setText("manual");
+        jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem8ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem8);
 
         jMenuBar1.add(jMenu1);
 
@@ -2251,8 +2252,8 @@ jLabelvelocpu1.setBackground(azul);
     mostrarmSockets();  
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-      
+    private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
+       
         File path = new File("manual.pdf");
             try {
                 Desktop.getDesktop().open(path);
@@ -2260,7 +2261,7 @@ jLabelvelocpu1.setBackground(azul);
                 Logger.getLogger(VetanaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
             }
         
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_jMenuItem8ActionPerformed
 
     private void guardar() {
         String title = jRadioButtonVS.getTitleAt(jRadioButtonVS.getSelectedIndex());
@@ -2312,7 +2313,6 @@ jLabelvelocpu1.setBackground(azul);
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JButton jButtonActualizar;
     private javax.swing.JButton jButtonBateria;
     private javax.swing.JButton jButtonFinalizarProcesos;
@@ -2344,6 +2344,7 @@ jLabelvelocpu1.setBackground(azul);
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
+    private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JMenuItem jMenuItemAmarillo1;
     private javax.swing.JMenuItem jMenuItemAqua;
     private javax.swing.JMenuItem jMenuItemAqua1;
