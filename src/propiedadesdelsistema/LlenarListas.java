@@ -24,12 +24,14 @@ public class LlenarListas {
     private ArrayList<String> listusb;
     private ArrayList<String> listxrandr;
     private ArrayList<String> listaceleracion;
+    private ArrayList<String> listacomposite;
     String linea;
 
     public LlenarListas() {
         listcpufreq = new ArrayList<String>();
         listxrandr = new ArrayList<String>();
         listaceleracion = new ArrayList<String>();
+        listacomposite = new ArrayList<String>();
         comandoconsolaprocesos("ps aux"); //axf
         comandoconsolameminfo("cat /proc/meminfo");
         comandoconsolacpuinfo("cat /proc/cpuinfo");
@@ -42,9 +44,25 @@ public class LlenarListas {
         comandoconsolacpufreq("cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor");
         comandoconsolacpufreq("cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_available_governors");
         comandocosolaxrandr("xrandr");
-            comandoconsolaceleracion("lspci -k");
+        comandoconsolaceleracion("lspci -k");
+        comandoconsolacomposite("less /var/log/Xorg.0.log | grep 'composite'");
 
     }
+    
+    private void comandoconsolacomposite(String pcmd){
+        listacomposite= new ArrayList<String>();
+        try {
+            Process cmd = Runtime.getRuntime().exec(pcmd);
+            cmd.waitFor();
+            BufferedReader buf = new BufferedReader(new InputStreamReader(cmd.getInputStream()));
+            String linea = "";
+            while ((linea = buf.readLine()) != null) {
+                listacomposite.add(linea.toString());
+            }
+        } catch (Exception e) {
+            javax.swing.JOptionPane.showMessageDialog(null, e, "Excepcion", javax.swing.JOptionPane.PLAIN_MESSAGE);
+         }
+        }
     
     private void comandoconsolaceleracion(String pcmd){
         listaceleracion= new ArrayList<String>();
@@ -243,6 +261,10 @@ public class LlenarListas {
 
     public ArrayList<String> getListaceleracion() {
         return listaceleracion;
+    }
+
+    public ArrayList<String> getListacomposite() {
+        return listacomposite;
     }
     
     
