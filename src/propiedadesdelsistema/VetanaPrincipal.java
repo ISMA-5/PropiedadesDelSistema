@@ -62,6 +62,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
         salidaVideo();
         aceleracionhardware();
         composite();
+        aceleracion();
         
         tamañofuente = 12;
         fuente = new Font(nombrefuente, estilo, tamañofuente);
@@ -185,6 +186,14 @@ public class VetanaPrincipal extends javax.swing.JFrame {
             jListComposite.setListData(listacomposite.toArray());
         }
         }
+    
+    private void aceleracion(){
+        ArrayList<String> listaceleration = listas.getListaccelera();
+        for (int i = 0; i < listaceleration.size(); i++) {
+            jListAceleration.setListData(listaceleration.toArray());
+        }
+        }
+        
         
         
         
@@ -397,6 +406,9 @@ public class VetanaPrincipal extends javax.swing.JFrame {
         jPanel6 = new javax.swing.JPanel();
         jScrollPane13 = new javax.swing.JScrollPane();
         jListComposite = new javax.swing.JList();
+        jPanel7 = new javax.swing.JPanel();
+        jScrollPane14 = new javax.swing.JScrollPane();
+        jListAceleration = new javax.swing.JList();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenuArchivo = new javax.swing.JMenu();
         jMenuItemGUuardar = new javax.swing.JMenuItem();
@@ -530,11 +542,11 @@ public class VetanaPrincipal extends javax.swing.JFrame {
         jPanelInfoSis.setLayout(jPanelInfoSisLayout);
         jPanelInfoSisLayout.setHorizontalGroup(
             jPanelInfoSisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1807, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1889, Short.MAX_VALUE)
         );
         jPanelInfoSisLayout.setVerticalGroup(
             jPanelInfoSisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 414, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 422, Short.MAX_VALUE)
         );
 
         jRadioButtonVS.addTab("Informacion General", jPanelInfoSis);
@@ -617,7 +629,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
             jPanelRAMLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelRAMLayout.createSequentialGroup()
                 .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 581, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 674, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 756, Short.MAX_VALUE)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 552, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanelRAMLayout.setVerticalGroup(
@@ -639,11 +651,11 @@ public class VetanaPrincipal extends javax.swing.JFrame {
         jPanelParticiones.setLayout(jPanelParticionesLayout);
         jPanelParticionesLayout.setHorizontalGroup(
             jPanelParticionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 1807, Short.MAX_VALUE)
+            .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 1889, Short.MAX_VALUE)
         );
         jPanelParticionesLayout.setVerticalGroup(
             jPanelParticionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 414, Short.MAX_VALUE)
+            .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 422, Short.MAX_VALUE)
         );
 
         jRadioButtonVS.addTab("Particiones", jPanelParticiones);
@@ -677,7 +689,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
                 .addComponent(jTextFieldNumeroProceso, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButtonFinalizarProcesos)
-                .addGap(0, 1157, Short.MAX_VALUE))
+                .addGap(0, 1239, Short.MAX_VALUE))
             .addComponent(jScrollPane6)
         );
         jPanelProcesosLayout.setVerticalGroup(
@@ -689,7 +701,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
                     .addComponent(jTextFieldNumeroProceso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButtonFinalizarProcesos)
                     .addComponent(jButtonActualizar))
-                .addGap(0, 19, Short.MAX_VALUE))
+                .addGap(0, 27, Short.MAX_VALUE))
         );
 
         jRadioButtonVS.addTab("Procesos", jPanelProcesos);
@@ -799,7 +811,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
             jPanelCPU2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelCPU2Layout.createSequentialGroup()
                 .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 597, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 746, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 828, Short.MAX_VALUE)
                 .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 464, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanelCPU2Layout.setVerticalGroup(
@@ -849,7 +861,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
                 .addComponent(jButtonSockets)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButtonRed)
-                .addGap(0, 1515, Short.MAX_VALUE))
+                .addGap(0, 1597, Short.MAX_VALUE))
             .addComponent(jScrollPane3)
         );
         jPanel2Layout.setVerticalGroup(
@@ -859,7 +871,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
                     .addComponent(jButtonBateria)
                     .addComponent(jButtonSockets)
                     .addComponent(jButtonRed))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 373, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -902,7 +914,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
                 .addComponent(jButton3)
                 .addGap(18, 18, 18)
                 .addComponent(jButton4)
-                .addContainerGap(1468, Short.MAX_VALUE))
+                .addContainerGap(1550, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -934,7 +946,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane10, javax.swing.GroupLayout.DEFAULT_SIZE, 1795, Short.MAX_VALUE))
+                .addComponent(jScrollPane10, javax.swing.GroupLayout.DEFAULT_SIZE, 1877, Short.MAX_VALUE))
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(40, 40, 40)
                 .addComponent(jButton1)
@@ -945,7 +957,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addComponent(jButton1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane10, javax.swing.GroupLayout.DEFAULT_SIZE, 380, Short.MAX_VALUE))
+                .addComponent(jScrollPane10, javax.swing.GroupLayout.DEFAULT_SIZE, 388, Short.MAX_VALUE))
         );
 
         jRadioButtonVS.addTab("Tarjeta Gráfica", jPanel3);
@@ -956,11 +968,11 @@ public class VetanaPrincipal extends javax.swing.JFrame {
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane11, javax.swing.GroupLayout.DEFAULT_SIZE, 1807, Short.MAX_VALUE)
+            .addComponent(jScrollPane11, javax.swing.GroupLayout.DEFAULT_SIZE, 1889, Short.MAX_VALUE)
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane11, javax.swing.GroupLayout.DEFAULT_SIZE, 414, Short.MAX_VALUE)
+            .addComponent(jScrollPane11, javax.swing.GroupLayout.DEFAULT_SIZE, 422, Short.MAX_VALUE)
         );
 
         jRadioButtonVS.addTab("Salida de video", jPanel4);
@@ -976,7 +988,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane12, javax.swing.GroupLayout.DEFAULT_SIZE, 1807, Short.MAX_VALUE)
+            .addComponent(jScrollPane12, javax.swing.GroupLayout.DEFAULT_SIZE, 1889, Short.MAX_VALUE)
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -993,7 +1005,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane13, javax.swing.GroupLayout.DEFAULT_SIZE, 1807, Short.MAX_VALUE)
+            .addComponent(jScrollPane13, javax.swing.GroupLayout.DEFAULT_SIZE, 1889, Short.MAX_VALUE)
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1003,6 +1015,21 @@ public class VetanaPrincipal extends javax.swing.JFrame {
         );
 
         jRadioButtonVS.addTab("Composiciòn", jPanel6);
+
+        jScrollPane14.setViewportView(jListAceleration);
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane14, javax.swing.GroupLayout.DEFAULT_SIZE, 1889, Short.MAX_VALUE)
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane14, javax.swing.GroupLayout.DEFAULT_SIZE, 422, Short.MAX_VALUE)
+        );
+
+        jRadioButtonVS.addTab("Aceleraciòn", jPanel7);
 
         jMenuArchivo.setText("Archivo");
 
@@ -1390,7 +1417,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jRadioButtonVS, javax.swing.GroupLayout.DEFAULT_SIZE, 456, Short.MAX_VALUE)
+            .addComponent(jRadioButtonVS, javax.swing.GroupLayout.DEFAULT_SIZE, 464, Short.MAX_VALUE)
         );
 
         pack();
@@ -1544,6 +1571,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
         jListAceleracion.setFont(fuente);
         jListComposite.setFont(fuente);
         jListxrandr.setFont(fuente);
+        jListAceleration.setFont(fuente);
         
         
 
@@ -1577,6 +1605,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
         jListAceleracion.setFont(fuente);
         jListComposite.setFont(fuente);
         jListxrandr.setFont(fuente);
+         jListAceleration.setFont(fuente);
 
     }//GEN-LAST:event_jMenuItemTam15ActionPerformed
 
@@ -1609,6 +1638,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
          jListAceleracion.setFont(fuente);
         jListComposite.setFont(fuente);
         jListxrandr.setFont(fuente);
+         jListAceleration.setFont(fuente);
 
     }//GEN-LAST:event_jMenuItemTam16ActionPerformed
 
@@ -1640,6 +1670,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
          jListAceleracion.setFont(fuente);
         jListComposite.setFont(fuente);
         jListxrandr.setFont(fuente);
+         jListAceleration.setFont(fuente);
         
 
     }//GEN-LAST:event_jMenuItemTam18ActionPerformed
@@ -1670,6 +1701,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
          jListAceleracion.setFont(fuente);
         jListComposite.setFont(fuente);
         jListxrandr.setFont(fuente);
+         jListAceleration.setFont(fuente);
         
 
     }//GEN-LAST:event_jMenuItemTam13ActionPerformed
@@ -1701,6 +1733,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
          jListAceleracion.setBackground(Color.decode("000000"));
         jListComposite.setBackground(Color.decode("000000"));
         jListxrandr.setBackground(Color.decode("000000"));
+        jListAceleration.setBackground(Color.decode("000000"));
     }//GEN-LAST:event_jMenuItemNegro1ActionPerformed
 
     private void jMenuItemMocasinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemMocasinActionPerformed
@@ -1729,6 +1762,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
          jListAceleracion.setBackground(mocasin);
         jListComposite.setBackground(mocasin);
         jListxrandr.setBackground(mocasin);
+        jListAceleration.setBackground(mocasin);
        
     }//GEN-LAST:event_jMenuItemMocasinActionPerformed
 
@@ -1759,6 +1793,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
        jListAceleracion.setBackground(rojo_obs);
         jListComposite.setBackground(rojo_obs);
         jListxrandr.setBackground(rojo_obs);
+         jListAceleration.setBackground(rojo_obs);
         
         
     }//GEN-LAST:event_jMenuItemRojoObscuro1ActionPerformed
@@ -1789,6 +1824,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
         jListAceleracion.setBackground(cardo);
         jListComposite.setBackground(cardo);
         jListxrandr.setBackground(cardo);
+         jListAceleration.setBackground(cardo);
         
     }//GEN-LAST:event_jMenuItemCardoActionPerformed
 
@@ -1818,6 +1854,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
         jListAceleracion.setBackground(beige);
         jListComposite.setBackground(beige);
         jListxrandr.setBackground(beige);
+         jListAceleration.setBackground(beige);
         
     }//GEN-LAST:event_jMenuItemBeigeActionPerformed
 
@@ -1848,6 +1885,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
         jListAceleracion.setBackground(azul);
         jListComposite.setBackground(azul);
         jListxrandr.setBackground(azul);
+         jListAceleration.setBackground(azul);
     
     }//GEN-LAST:event_jMenuItemAzulClaro1ActionPerformed
 
@@ -1877,6 +1915,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
         jListAceleracion.setBackground(aqua);
         jListComposite.setBackground(aqua);
         jListxrandr.setBackground(aqua);
+         jListAceleration.setBackground(aqua);
         
     }//GEN-LAST:event_jMenuItemAquaActionPerformed
 
@@ -1903,6 +1942,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
         jLabelmemtotal1.setBackground(gris);
         jLabelmemcache1.setBackground(gris);
         jLabelmodcpu1.setBackground(gris);
+         jListAceleration.setBackground(gris);
         
 
     }//GEN-LAST:event_jMenuItemGrisActionPerformed
@@ -1932,6 +1972,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
         jListAceleracion.setBackground(verdeOliva);
         jListComposite.setBackground(verdeOliva);
         jListxrandr.setBackground(verdeOliva);
+         jListAceleration.setBackground(verdeOliva);
     }//GEN-LAST:event_jMenuItemVerdeOlivaActionPerformed
 
     private void jMenuItemMasColores2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemMasColores2ActionPerformed
@@ -1964,6 +2005,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
         jListAceleracion.setBackground(newColor);
         jListComposite.setBackground(newColor);
         jListxrandr.setBackground(newColor);
+         jListAceleration.setBackground(newColor);
         }
         colores.getSelectionModel().addChangeListener(
             new ChangeListener() {
@@ -2000,6 +2042,8 @@ public class VetanaPrincipal extends javax.swing.JFrame {
         jListAceleracion.setForeground(Color.decode("000000"));
         jListComposite.setForeground(Color.decode("000000"));
         jListxrandr.setForeground(Color.decode("000000"));
+        jListAceleration.setForeground(Color.decode("000000"));
+        
     }//GEN-LAST:event_jMenuItemNegroTextActionPerformed
 
     private void jMenuItemRojo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemRojo1ActionPerformed
@@ -2027,6 +2071,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
         jListAceleracion.setForeground(rojo);
         jListComposite.setForeground(rojo);
         jListxrandr.setForeground(rojo);
+         jListAceleration.setForeground(rojo);
     }//GEN-LAST:event_jMenuItemRojo1ActionPerformed
 
     private void jMenuItemAqua1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemAqua1ActionPerformed
@@ -2054,6 +2099,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
          jListAceleracion.setForeground(aqua);
         jListComposite.setForeground(aqua);
         jListxrandr.setForeground(aqua);
+         jListAceleration.setForeground(aqua);
     }//GEN-LAST:event_jMenuItemAqua1ActionPerformed
 
     private void jMenuItemNaranja1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemNaranja1ActionPerformed
@@ -2081,6 +2127,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
          jListAceleracion.setForeground(naranja);
         jListComposite.setForeground(naranja);
         jListxrandr.setForeground(naranja);
+         jListAceleration.setForeground(naranja);
     }//GEN-LAST:event_jMenuItemNaranja1ActionPerformed
 
     private void jMenuItemAmarillo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemAmarillo1ActionPerformed
@@ -2107,6 +2154,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
          jListAceleracion.setForeground(Color.YELLOW);
         jListComposite.setForeground(Color.YELLOW);
         jListxrandr.setForeground(Color.YELLOW);
+         jListxrandr.setForeground(Color.YELLOW);
     }//GEN-LAST:event_jMenuItemAmarillo1ActionPerformed
 
     private void jMenuItemCafeClaroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemCafeClaroActionPerformed
@@ -2134,6 +2182,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
          jListAceleracion.setForeground(cafeClaro);
         jListComposite.setForeground(cafeClaro);
         jListxrandr.setForeground(cafeClaro);
+         jListAceleration.setForeground(cafeClaro);
     }//GEN-LAST:event_jMenuItemCafeClaroActionPerformed
 
     private void jMenuItemMarronRosaseoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemMarronRosaseoActionPerformed
@@ -2161,6 +2210,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
              jListAceleracion.setForeground(marronRosaseo);
         jListComposite.setForeground(marronRosaseo);
         jListxrandr.setForeground(marronRosaseo);
+         jListAceleration.setForeground(marronRosaseo);
     }//GEN-LAST:event_jMenuItemMarronRosaseoActionPerformed
 
     private void jMenuItemVerde1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemVerde1ActionPerformed
@@ -2188,6 +2238,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
         jListAceleracion.setForeground(verde);
         jListComposite.setForeground(verde);
         jListxrandr.setForeground(verde);
+         jListAceleration.setForeground(verde);
     }//GEN-LAST:event_jMenuItemVerde1ActionPerformed
 
     private void jMenuItemVerdeClaro1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemVerdeClaro1ActionPerformed
@@ -2215,6 +2266,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
         jListAceleracion.setForeground(verde_c);
         jListComposite.setForeground(verde_c);
         jListxrandr.setForeground(verde_c);
+         jListAceleration.setForeground(verde_c);
     }//GEN-LAST:event_jMenuItemVerdeClaro1ActionPerformed
 
     private void jMenuItemSalmonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemSalmonActionPerformed
@@ -2244,6 +2296,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
         jListAceleracion.setForeground(salmon);
         jListComposite.setForeground(salmon);
         jListxrandr.setForeground(salmon);
+         jListAceleration.setForeground(salmon);
     }//GEN-LAST:event_jMenuItemSalmonActionPerformed
 
     private void jMenuItemMasColores1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemMasColores1ActionPerformed
@@ -2275,6 +2328,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
         jListAceleracion.setForeground(newColor);
         jListComposite.setForeground(newColor);
         jListxrandr.setForeground(newColor);
+         jListAceleration.setForeground(newColor);
         }
         colores.getSelectionModel().addChangeListener(
             new ChangeListener() {
@@ -2317,6 +2371,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
         jListAceleracion.setFont(fuente);
         jListComposite.setFont(fuente);
         jListxrandr.setFont(fuente);
+          jListAceleration.setFont(fuente);
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
@@ -2349,7 +2404,8 @@ public class VetanaPrincipal extends javax.swing.JFrame {
         jLabelmodcpu1.setFont(fuente);
         jListAceleracion.setFont(fuente);
         jListComposite.setFont(fuente);
-        jListxrandr.setFont(fuente);     
+        jListxrandr.setFont(fuente); 
+          jListAceleration.setFont(fuente);
       
      
     }//GEN-LAST:event_jMenuItem3ActionPerformed
@@ -2385,6 +2441,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
         jListAceleracion.setFont(fuente);
         jListComposite.setFont(fuente);
         jListxrandr.setFont(fuente);
+          jListAceleration.setFont(fuente);
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
@@ -2418,6 +2475,8 @@ public class VetanaPrincipal extends javax.swing.JFrame {
         jListAceleracion.setFont(fuente);
         jListComposite.setFont(fuente);
         jListxrandr.setFont(fuente);
+        jListAceleration.setFont(fuente);
+
     }//GEN-LAST:event_jMenuItem7ActionPerformed
 
      private void mostrarmSockets() {
@@ -2511,6 +2570,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelusername1;
     private javax.swing.JLabel jLabelvelocpu1;
     private javax.swing.JList jListAceleracion;
+    private javax.swing.JList jListAceleration;
     private javax.swing.JList jListComposite;
     private javax.swing.JList jListProcesos;
     private javax.swing.JList jListxrandr;
@@ -2571,6 +2631,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanelCPU2;
     private javax.swing.JPanel jPanelInfoSis;
     private javax.swing.JPanel jPanelInicio;
@@ -2583,6 +2644,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane11;
     private javax.swing.JScrollPane jScrollPane12;
     private javax.swing.JScrollPane jScrollPane13;
+    private javax.swing.JScrollPane jScrollPane14;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;

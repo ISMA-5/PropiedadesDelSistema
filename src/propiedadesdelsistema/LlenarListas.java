@@ -25,6 +25,7 @@ public class LlenarListas {
     private ArrayList<String> listxrandr;
     private ArrayList<String> listaceleracion;
     private ArrayList<String> listacomposite;
+    private ArrayList<String> listaccelera;
     String linea;
 
     public LlenarListas() {
@@ -32,6 +33,7 @@ public class LlenarListas {
         listxrandr = new ArrayList<String>();
         listaceleracion = new ArrayList<String>();
         listacomposite = new ArrayList<String>();
+        listaccelera =new ArrayList<String>();
         comandoconsolaprocesos("ps aux"); //axf
         comandoconsolameminfo("cat /proc/meminfo");
         comandoconsolacpuinfo("cat /proc/cpuinfo");
@@ -46,8 +48,25 @@ public class LlenarListas {
         comandocosolaxrandr("xrandr");
         comandoconsolaceleracion("lspci -k");
         comandoconsolacomposite("less /var/log/Xorg.0.log | grep 'composite'");
+        comandoconsolacceleration("less /var/log/Xorg.0.log | grep 'acceleration'");
 
     }
+    
+     private void comandoconsolacceleration(String pcmd){
+        listaccelera= new ArrayList<String>();
+        try {
+            Process cmd = Runtime.getRuntime().exec(pcmd);
+            cmd.waitFor();
+            BufferedReader buf = new BufferedReader(new InputStreamReader(cmd.getInputStream()));
+            String linea = "";
+            while ((linea = buf.readLine()) != null) {
+                listaccelera.add(linea.toString());
+            }
+        } catch (Exception e) {
+            javax.swing.JOptionPane.showMessageDialog(null, e, "Excepcion", javax.swing.JOptionPane.PLAIN_MESSAGE);
+         }
+        }
+    
     
     private void comandoconsolacomposite(String pcmd){
         listacomposite= new ArrayList<String>();
@@ -63,6 +82,8 @@ public class LlenarListas {
             javax.swing.JOptionPane.showMessageDialog(null, e, "Excepcion", javax.swing.JOptionPane.PLAIN_MESSAGE);
          }
         }
+
+    
     
     private void comandoconsolaceleracion(String pcmd){
         listaceleracion= new ArrayList<String>();
@@ -267,5 +288,8 @@ public class LlenarListas {
         return listacomposite;
     }
     
+    public ArrayList<String> getListaccelera() {
+        return listaccelera;
+    }
     
 }
