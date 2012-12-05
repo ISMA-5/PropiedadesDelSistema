@@ -23,11 +23,13 @@ public class LlenarListas {
     private ArrayList<String> listadistribucion;
     private ArrayList<String> listusb;
     private ArrayList<String> listxrandr;
+    private ArrayList<String> listaceleracion;
     String linea;
 
     public LlenarListas() {
         listcpufreq = new ArrayList<String>();
         listxrandr = new ArrayList<String>();
+        listaceleracion = new ArrayList<String>();
         comandoconsolaprocesos("ps aux"); //axf
         comandoconsolameminfo("cat /proc/meminfo");
         comandoconsolacpuinfo("cat /proc/cpuinfo");
@@ -40,8 +42,24 @@ public class LlenarListas {
         comandoconsolacpufreq("cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor");
         comandoconsolacpufreq("cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_available_governors");
         comandocosolaxrandr("xrandr");
+            comandoconsolaceleracion("lspci -k");
 
     }
+    
+    private void comandoconsolaceleracion(String pcmd){
+        listaceleracion= new ArrayList<String>();
+        try {
+            Process cmd = Runtime.getRuntime().exec(pcmd);
+            cmd.waitFor();
+            BufferedReader buf = new BufferedReader(new InputStreamReader(cmd.getInputStream()));
+            String linea = "";
+            while ((linea = buf.readLine()) != null) {
+                listaceleracion.add(linea.toString());
+            }
+        } catch (Exception e) {
+            javax.swing.JOptionPane.showMessageDialog(null, e, "Excepcion", javax.swing.JOptionPane.PLAIN_MESSAGE);
+         }
+        }
     
     private void comandocosolaxrandr(String pcmd){
         listxrandr = new ArrayList<String>();
@@ -222,4 +240,10 @@ public class LlenarListas {
     public ArrayList<String> getlistxrandr() {
         return listxrandr;
     }
+
+    public ArrayList<String> getListaceleracion() {
+        return listaceleracion;
+    }
+    
+    
 }
