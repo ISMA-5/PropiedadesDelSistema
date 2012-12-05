@@ -1541,6 +1541,10 @@ public class VetanaPrincipal extends javax.swing.JFrame {
         jScrollPane3.setFont(fuente);
         jPanel2.setFont(fuente);
         jTextAreaDispositivos.setFont(fuente);
+        jListAceleracion.setFont(fuente);
+        jListComposite.setFont(fuente);
+        jListxrandr.setFont(fuente);
+        
         
 
     }//GEN-LAST:event_jMenuItemTam14ActionPerformed
@@ -1570,6 +1574,9 @@ public class VetanaPrincipal extends javax.swing.JFrame {
         jLabelmodcpu1.setFont(fuente);
         jLabelvelocpu1.setFont(fuente);
         jButtonSalir.setFont(fuente);
+        jListAceleracion.setFont(fuente);
+        jListComposite.setFont(fuente);
+        jListxrandr.setFont(fuente);
 
     }//GEN-LAST:event_jMenuItemTam15ActionPerformed
 
@@ -1599,6 +1606,9 @@ public class VetanaPrincipal extends javax.swing.JFrame {
         jButtonSalir.setFont(fuente);
         jListProcesos.setFont(fuente);
         jTextAreaDistribucion.setFont(fuente);
+         jListAceleracion.setFont(fuente);
+        jListComposite.setFont(fuente);
+        jListxrandr.setFont(fuente);
 
     }//GEN-LAST:event_jMenuItemTam16ActionPerformed
 
@@ -1627,6 +1637,9 @@ public class VetanaPrincipal extends javax.swing.JFrame {
         jLabelvelocpu1.setFont(fuente);
         jButtonSalir.setFont(fuente);
         jTextAreaDistribucion.setFont(fuente);
+         jListAceleracion.setFont(fuente);
+        jListComposite.setFont(fuente);
+        jListxrandr.setFont(fuente);
         
 
     }//GEN-LAST:event_jMenuItemTam18ActionPerformed
@@ -1654,6 +1667,9 @@ public class VetanaPrincipal extends javax.swing.JFrame {
         jScrollPane1.setFont(fuente);
         jTextAreaDispositivos.setFont(fuente);
         jTextAreaDistribucion.setFont(fuente);
+         jListAceleracion.setFont(fuente);
+        jListComposite.setFont(fuente);
+        jListxrandr.setFont(fuente);
         
 
     }//GEN-LAST:event_jMenuItemTam13ActionPerformed
@@ -1682,6 +1698,9 @@ public class VetanaPrincipal extends javax.swing.JFrame {
         jLabelmemcache1.setBackground(Color.decode("000000"));
         jLabelmodcpu1.setBackground(Color.decode("000000"));
         jLabelvelocpu1.setBackground(Color.decode("000000"));
+         jListAceleracion.setBackground(Color.decode("000000"));
+        jListComposite.setBackground(Color.decode("000000"));
+        jListxrandr.setBackground(Color.decode("000000"));
     }//GEN-LAST:event_jMenuItemNegro1ActionPerformed
 
     private void jMenuItemMocasinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemMocasinActionPerformed
@@ -1707,6 +1726,9 @@ public class VetanaPrincipal extends javax.swing.JFrame {
         jLabelmemcache1.setBackground(mocasin);
         jLabelmodcpu1.setBackground(mocasin);
         jLabelvelocpu1.setBackground(mocasin);
+         jListAceleracion.setBackground(mocasin);
+        jListComposite.setBackground(mocasin);
+        jListxrandr.setBackground(mocasin);
        
     }//GEN-LAST:event_jMenuItemMocasinActionPerformed
 
@@ -1734,6 +1756,10 @@ public class VetanaPrincipal extends javax.swing.JFrame {
         jLabelmemcache1.setBackground(rojo_obs);
         jLabelmodcpu1.setBackground(rojo_obs);
         jLabelvelocpu1.setBackground(rojo_obs);
+       jListAceleracion.setBackground(rojo_obs);
+        jListComposite.setBackground(rojo_obs);
+        jListxrandr.setBackground(rojo_obs);
+        
         
     }//GEN-LAST:event_jMenuItemRojoObscuro1ActionPerformed
 
@@ -1760,6 +1786,9 @@ public class VetanaPrincipal extends javax.swing.JFrame {
         jLabelmemtotal1.setBackground(cardo);
         jLabelmemcache1.setBackground(cardo);
         jLabelmodcpu1.setBackground(cardo);
+        jListAceleracion.setBackground(cardo);
+        jListComposite.setBackground(cardo);
+        jListxrandr.setBackground(cardo);
         
     }//GEN-LAST:event_jMenuItemCardoActionPerformed
 
@@ -1786,6 +1815,9 @@ public class VetanaPrincipal extends javax.swing.JFrame {
         jLabelmemtotal1.setBackground(beige);
         jLabelmemcache1.setBackground(beige);
         jLabelmodcpu1.setBackground(beige);
+        jListAceleracion.setBackground(beige);
+        jListComposite.setBackground(beige);
+        jListxrandr.setBackground(beige);
         
     }//GEN-LAST:event_jMenuItemBeigeActionPerformed
 
@@ -1812,7 +1844,10 @@ public class VetanaPrincipal extends javax.swing.JFrame {
         jLabelmemtotal1.setBackground(azul);
         jLabelmemcache1.setBackground(azul);
         jLabelmodcpu1.setBackground(azul);
-jLabelvelocpu1.setBackground(azul);
+        jLabelvelocpu1.setBackground(azul);
+        jListAceleracion.setBackground(azul);
+        jListComposite.setBackground(azul);
+        jListxrandr.setBackground(azul);
     
     }//GEN-LAST:event_jMenuItemAzulClaro1ActionPerformed
 
@@ -1839,6 +1874,9 @@ jLabelvelocpu1.setBackground(azul);
         jLabelmemcache1.setBackground(aqua);
         jLabelvelocpu1.setBackground(aqua);
         jLabelmodcpu1.setBackground(aqua);
+        jListAceleracion.setBackground(aqua);
+        jListComposite.setBackground(aqua);
+        jListxrandr.setBackground(aqua);
         
     }//GEN-LAST:event_jMenuItemAquaActionPerformed
 
@@ -1850,7 +1888,6 @@ jLabelvelocpu1.setBackground(azul);
         jTableCPUuno.setBackground(gris);
         jTableCPUdos.setBackground(gris);
         jTextAreaParticion.setBackground(gris);
-         
         jTextAreaDispositivos.setBackground(gris);
         jPanelInicio.setBackground(gris);
         jTextAreaDistribucion.setBackground(gris);
@@ -1892,6 +1929,9 @@ jLabelvelocpu1.setBackground(azul);
         jLabelmemtotal1.setBackground(verdeOliva);
         jLabelmemcache1.setBackground(verdeOliva);
         jLabelmodcpu1.setBackground(verdeOliva);
+        jListAceleracion.setBackground(verdeOliva);
+        jListComposite.setBackground(verdeOliva);
+        jListxrandr.setBackground(verdeOliva);
     }//GEN-LAST:event_jMenuItemVerdeOlivaActionPerformed
 
     private void jMenuItemMasColores2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemMasColores2ActionPerformed
@@ -1921,6 +1961,9 @@ jLabelvelocpu1.setBackground(azul);
         jLabelmemcache1.setBackground(newColor);
         jLabelmodcpu1.setBackground(newColor);
         jLabelvelocpu1.setBackground(newColor);
+        jListAceleracion.setBackground(newColor);
+        jListComposite.setBackground(newColor);
+        jListxrandr.setBackground(newColor);
         }
         colores.getSelectionModel().addChangeListener(
             new ChangeListener() {
@@ -1954,6 +1997,9 @@ jLabelvelocpu1.setBackground(azul);
         jLabelmemcache1.setForeground(Color.decode("000000"));
         jLabelmodcpu1.setForeground(Color.decode("000000"));
         jLabelvelocpu1.setForeground(Color.decode("000000"));
+        jListAceleracion.setForeground(Color.decode("000000"));
+        jListComposite.setForeground(Color.decode("000000"));
+        jListxrandr.setForeground(Color.decode("000000"));
     }//GEN-LAST:event_jMenuItemNegroTextActionPerformed
 
     private void jMenuItemRojo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemRojo1ActionPerformed
@@ -1978,6 +2024,9 @@ jLabelvelocpu1.setBackground(azul);
         jLabelmemtotal1.setForeground(rojo);
         jLabelmemcache1.setForeground(rojo);
         jLabelmodcpu1.setForeground(rojo);
+        jListAceleracion.setForeground(rojo);
+        jListComposite.setForeground(rojo);
+        jListxrandr.setForeground(rojo);
     }//GEN-LAST:event_jMenuItemRojo1ActionPerformed
 
     private void jMenuItemAqua1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemAqua1ActionPerformed
@@ -2002,6 +2051,9 @@ jLabelvelocpu1.setBackground(azul);
         jLabelmemtotal1.setForeground(aqua);
         jLabelmemcache1.setForeground(aqua);
         jLabelmodcpu1.setForeground(aqua);
+         jListAceleracion.setForeground(aqua);
+        jListComposite.setForeground(aqua);
+        jListxrandr.setForeground(aqua);
     }//GEN-LAST:event_jMenuItemAqua1ActionPerformed
 
     private void jMenuItemNaranja1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemNaranja1ActionPerformed
@@ -2026,6 +2078,9 @@ jLabelvelocpu1.setBackground(azul);
         jLabelmemtotal1.setForeground(naranja);
         jLabelmemcache1.setForeground(naranja);
         jLabelmodcpu1.setForeground(naranja);
+         jListAceleracion.setForeground(naranja);
+        jListComposite.setForeground(naranja);
+        jListxrandr.setForeground(naranja);
     }//GEN-LAST:event_jMenuItemNaranja1ActionPerformed
 
     private void jMenuItemAmarillo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemAmarillo1ActionPerformed
@@ -2049,6 +2104,9 @@ jLabelvelocpu1.setBackground(azul);
         jLabelmemtotal1.setForeground(Color.YELLOW);
         jLabelmemcache1.setForeground(Color.YELLOW);
         jLabelmodcpu1.setForeground(Color.YELLOW);
+         jListAceleracion.setForeground(Color.YELLOW);
+        jListComposite.setForeground(Color.YELLOW);
+        jListxrandr.setForeground(Color.YELLOW);
     }//GEN-LAST:event_jMenuItemAmarillo1ActionPerformed
 
     private void jMenuItemCafeClaroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemCafeClaroActionPerformed
@@ -2073,6 +2131,9 @@ jLabelvelocpu1.setBackground(azul);
         jLabelmemtotal1.setForeground(cafeClaro);
         jLabelmemcache1.setForeground(cafeClaro);
         jLabelmodcpu1.setForeground(cafeClaro);
+         jListAceleracion.setForeground(cafeClaro);
+        jListComposite.setForeground(cafeClaro);
+        jListxrandr.setForeground(cafeClaro);
     }//GEN-LAST:event_jMenuItemCafeClaroActionPerformed
 
     private void jMenuItemMarronRosaseoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemMarronRosaseoActionPerformed
@@ -2097,6 +2158,9 @@ jLabelvelocpu1.setBackground(azul);
         jLabelmemtotal1.setForeground(marronRosaseo);
         jLabelmemcache1.setForeground(marronRosaseo);
         jLabelmodcpu1.setForeground(marronRosaseo);
+             jListAceleracion.setForeground(marronRosaseo);
+        jListComposite.setForeground(marronRosaseo);
+        jListxrandr.setForeground(marronRosaseo);
     }//GEN-LAST:event_jMenuItemMarronRosaseoActionPerformed
 
     private void jMenuItemVerde1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemVerde1ActionPerformed
@@ -2121,6 +2185,9 @@ jLabelvelocpu1.setBackground(azul);
         jLabelmemtotal1.setForeground(verde);
         jLabelmemcache1.setForeground(verde);
         jLabelmodcpu1.setForeground(verde);
+        jListAceleracion.setForeground(verde);
+        jListComposite.setForeground(verde);
+        jListxrandr.setForeground(verde);
     }//GEN-LAST:event_jMenuItemVerde1ActionPerformed
 
     private void jMenuItemVerdeClaro1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemVerdeClaro1ActionPerformed
@@ -2145,6 +2212,9 @@ jLabelvelocpu1.setBackground(azul);
         jLabelmemtotal1.setForeground(verde_c);
         jLabelmemcache1.setForeground(verde_c);
         jLabelmodcpu1.setForeground(verde_c);
+        jListAceleracion.setForeground(verde_c);
+        jListComposite.setForeground(verde_c);
+        jListxrandr.setForeground(verde_c);
     }//GEN-LAST:event_jMenuItemVerdeClaro1ActionPerformed
 
     private void jMenuItemSalmonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemSalmonActionPerformed
@@ -2171,6 +2241,9 @@ jLabelvelocpu1.setBackground(azul);
         jLabelmemtotal1.setForeground(salmon);
         jLabelmemcache1.setForeground(salmon);
         jLabelmodcpu1.setForeground(salmon);
+        jListAceleracion.setForeground(salmon);
+        jListComposite.setForeground(salmon);
+        jListxrandr.setForeground(salmon);
     }//GEN-LAST:event_jMenuItemSalmonActionPerformed
 
     private void jMenuItemMasColores1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemMasColores1ActionPerformed
@@ -2199,6 +2272,9 @@ jLabelvelocpu1.setBackground(azul);
         jLabelmemtotal1.setForeground(newColor);
         jLabelmemcache1.setForeground(newColor);
         jLabelmodcpu1.setForeground(newColor);
+        jListAceleracion.setForeground(newColor);
+        jListComposite.setForeground(newColor);
+        jListxrandr.setForeground(newColor);
         }
         colores.getSelectionModel().addChangeListener(
             new ChangeListener() {
@@ -2238,6 +2314,9 @@ jLabelvelocpu1.setBackground(azul);
         jLabelmemtotal1.setFont(fuente);
         jLabelmemcache1.setFont(fuente);
         jLabelmodcpu1.setFont(fuente);
+        jListAceleracion.setFont(fuente);
+        jListComposite.setFont(fuente);
+        jListxrandr.setFont(fuente);
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
@@ -2268,7 +2347,9 @@ jLabelvelocpu1.setBackground(azul);
         jLabelmemtotal1.setFont(fuente);
         jLabelmemcache1.setFont(fuente);
         jLabelmodcpu1.setFont(fuente);
-     
+        jListAceleracion.setFont(fuente);
+        jListComposite.setFont(fuente);
+        jListxrandr.setFont(fuente);     
       
      
     }//GEN-LAST:event_jMenuItem3ActionPerformed
@@ -2301,6 +2382,9 @@ jLabelvelocpu1.setBackground(azul);
         jLabelmemtotal1.setFont(fuente);
         jLabelmemcache1.setFont(fuente);
         jLabelmodcpu1.setFont(fuente);
+        jListAceleracion.setFont(fuente);
+        jListComposite.setFont(fuente);
+        jListxrandr.setFont(fuente);
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
@@ -2310,7 +2394,7 @@ jLabelvelocpu1.setBackground(azul);
         fuente = new Font(nombrefuente, estilo, tamañofuente);
       
         
-             jTextAreaInfoGeneral.setFont(fuente);
+        jTextAreaInfoGeneral.setFont(fuente);
         jTextAreaInfoGeneral.setFont(fuente);
         jPanel2.setFont(fuente);
         jTextAreaDispositivos.setFont(fuente);
@@ -2331,6 +2415,9 @@ jLabelvelocpu1.setBackground(azul);
         jLabelmemtotal1.setFont(fuente);
         jLabelmemcache1.setFont(fuente);
         jLabelmodcpu1.setFont(fuente);
+        jListAceleracion.setFont(fuente);
+        jListComposite.setFont(fuente);
+        jListxrandr.setFont(fuente);
     }//GEN-LAST:event_jMenuItem7ActionPerformed
 
      private void mostrarmSockets() {
