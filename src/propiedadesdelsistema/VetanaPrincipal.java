@@ -56,7 +56,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
         informacionparticiones();
         informacionprocesos();
         inicio();
-        llenartabla();
+        //llenartabla();
         llenarinfocpusimple();
         mostrarmeminfoavanzada();
         salidaVideo();
@@ -275,7 +275,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
         String substring1 = substring.substring(x);//Aqui se guarda la cadena ya sin espacios y sin los 2 puntos
         return substring1;//se retorna la cadena
     }
-    
+    /*
         private void llenartabla(){
           ArrayList<String> listcpuinfo = listas.getListcpuinfo();
           ArrayList<String> listcpufreq = listas.getListcpufreq();
@@ -297,7 +297,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
         model.setValueAt(cpu3, 56, 1);
         model.setValueAt(cpu4, 57, 1);
      }
-
+*/
     private void MatarprocesoPID(){
         
         String osName = System.getProperty("os.name");
