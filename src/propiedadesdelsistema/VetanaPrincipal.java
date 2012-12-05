@@ -5,6 +5,7 @@
 package propiedadesdelsistema;
 
 import java.awt.Color;
+import java.awt.Desktop;
 import java.awt.Font;
 import java.io.BufferedReader;
 import java.io.File;
@@ -12,6 +13,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.DefaultListModel;
 import javax.swing.JColorChooser;
 import javax.swing.JFileChooser;
@@ -53,7 +56,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
         informacionparticiones();
         informacionprocesos();
         inicio();
-        //llenartabla();
+        llenartabla();
         llenarinfocpusimple();
         mostrarmeminfoavanzada();
         tamañofuente = 12;
@@ -204,7 +207,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
         for (int i = 0; i < listmeminfo.size(); i++) {
             String valorDepurados = valorDepurado(listmeminfo.get(i)+ "\n");
             TableModel modelo = jTableRAM.getModel();
-            modelo.setValueAt(valorDepurados, i, 0);
+            modelo.setValueAt(valorDepurados, i, 1);
         }
     }
     
@@ -241,7 +244,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
         return substring1;//se retorna la cadena
     }
     
-        /*private void llenartabla(){
+        private void llenartabla(){
           ArrayList<String> listcpuinfo = listas.getListcpuinfo();
           ArrayList<String> listcpufreq = listas.getListcpufreq();
         for (int i = 0; i < listcpuinfo.size() - 1; i++) {
@@ -262,7 +265,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
         model.setValueAt(cpu3, 56, 1);
         model.setValueAt(cpu4, 57, 1);
      }
-*/
+
     private void MatarprocesoPID(){
         
         String osName = System.getProperty("os.name");
@@ -400,6 +403,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
         jMenuItemMasColores1 = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem8 = new javax.swing.JMenuItem();
 
         jMenuItem2.setText("jMenuItem2");
 
@@ -489,7 +493,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
         );
         jPanelInfoSisLayout.setVerticalGroup(
             jPanelInfoSisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 410, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 427, Short.MAX_VALUE)
         );
 
         jRadioButtonVS.addTab("Informacion General", jPanelInfoSis);
@@ -581,7 +585,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
                 .addGroup(jPanelRAMLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 1, Short.MAX_VALUE))
         );
 
         jRadioButtonVS.addTab("RAM", jPanelRAM);
@@ -598,7 +602,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
         );
         jPanelParticionesLayout.setVerticalGroup(
             jPanelParticionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 410, Short.MAX_VALUE)
+            .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 427, Short.MAX_VALUE)
         );
 
         jRadioButtonVS.addTab("Particiones", jPanelParticiones);
@@ -644,7 +648,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
                     .addComponent(jTextFieldNumeroProceso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButtonFinalizarProcesos)
                     .addComponent(jButtonActualizar))
-                .addGap(0, 15, Short.MAX_VALUE))
+                .addGap(0, 32, Short.MAX_VALUE))
         );
 
         jRadioButtonVS.addTab("Procesos", jPanelProcesos);
@@ -760,7 +764,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
         jPanelCPU2Layout.setVerticalGroup(
             jPanelCPU2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelCPU2Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
+                .addGap(0, 1, Short.MAX_VALUE)
                 .addGroup(jPanelCPU2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 408, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -814,7 +818,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
                     .addComponent(jButtonBateria)
                     .addComponent(jButtonSockets)
                     .addComponent(jButtonRed))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 373, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -900,10 +904,10 @@ public class VetanaPrincipal extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addComponent(jButton1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane10, javax.swing.GroupLayout.DEFAULT_SIZE, 376, Short.MAX_VALUE))
+                .addComponent(jScrollPane10, javax.swing.GroupLayout.DEFAULT_SIZE, 393, Short.MAX_VALUE))
         );
 
-        jRadioButtonVS.addTab("Targeta Grafica", jPanel3);
+        jRadioButtonVS.addTab("Tarjeta Gráfica", jPanel3);
 
         jMenuArchivo.setText("Archivo");
 
@@ -929,6 +933,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
 
         jMenuFormato.setText("Formato");
 
+        jMenuTamanio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/tamaño.jpg"))); // NOI18N
         jMenuTamanio.setText("Tamaño");
 
         jMenuItemTam13.setBackground(new java.awt.Color(247, 250, 251));
@@ -1057,6 +1062,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
 
         jMenuPersonalizar.add(jMenuOpciones);
 
+        jMenuFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/tipo de color.jpg"))); // NOI18N
         jMenuFondo.setText("Color de Fondo");
 
         jMenuItemNegro1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconosColores/negro.png"))); // NOI18N
@@ -1151,6 +1157,7 @@ public class VetanaPrincipal extends javax.swing.JFrame {
 
         jMenuPersonalizar.add(jMenuFondo);
 
+        jMenuColorTexto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/tipo de letra.jpg"))); // NOI18N
         jMenuColorTexto.setText("Color de Texto");
 
         jMenuItemNegroText.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconosColores/negro.png"))); // NOI18N
@@ -1256,16 +1263,25 @@ public class VetanaPrincipal extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenuPersonalizar);
 
-        jMenu1.setText("Acerca de...");
+        jMenu1.setText("Ayuda");
 
         jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/informacion2.gif"))); // NOI18N
-        jMenuItem1.setText("Informacion");
+        jMenuItem1.setText("Acerca de ...");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem1ActionPerformed(evt);
             }
         });
         jMenu1.add(jMenuItem1);
+
+        jMenuItem8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/ayuda.gif"))); // NOI18N
+        jMenuItem8.setText("manual");
+        jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem8ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem8);
 
         jMenuBar1.add(jMenu1);
 
@@ -2236,6 +2252,17 @@ jLabelvelocpu1.setBackground(azul);
     mostrarmSockets();  
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
+       
+        File path = new File("manual.pdf");
+            try {
+                Desktop.getDesktop().open(path);
+            } catch (IOException ex) {
+                Logger.getLogger(VetanaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        
+    }//GEN-LAST:event_jMenuItem8ActionPerformed
+
     private void guardar() {
         String title = jRadioButtonVS.getTitleAt(jRadioButtonVS.getSelectedIndex());
         try {
@@ -2317,6 +2344,7 @@ jLabelvelocpu1.setBackground(azul);
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
+    private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JMenuItem jMenuItemAmarillo1;
     private javax.swing.JMenuItem jMenuItemAqua;
     private javax.swing.JMenuItem jMenuItemAqua1;

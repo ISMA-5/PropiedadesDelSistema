@@ -59,6 +59,9 @@
           <SubComponents>
             <Menu class="javax.swing.JMenu" name="jMenuTamanio">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/botones/tama&#xf1;o.jpg"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Tama&#xf1;o"/>
               </Properties>
               <SubComponents>
@@ -213,6 +216,9 @@
             </Menu>
             <Menu class="javax.swing.JMenu" name="jMenuFondo">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/botones/tipo de color.jpg"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Color de Fondo"/>
               </Properties>
               <SubComponents>
@@ -330,6 +336,9 @@
             </Menu>
             <Menu class="javax.swing.JMenu" name="jMenuColorTexto">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/botones/tipo de letra.jpg"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Color de Texto"/>
               </Properties>
               <SubComponents>
@@ -460,7 +469,7 @@
         </Menu>
         <Menu class="javax.swing.JMenu" name="jMenu1">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Acerca de..."/>
+            <Property name="text" type="java.lang.String" value="Ayuda"/>
           </Properties>
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItem1">
@@ -468,10 +477,21 @@
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/botones/informacion2.gif"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Informacion"/>
+                <Property name="text" type="java.lang.String" value="Acerca de ..."/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem1ActionPerformed"/>
+              </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem8">
+              <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/botones/ayuda.gif"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="manual"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem8ActionPerformed"/>
               </Events>
             </MenuItem>
           </SubComponents>
@@ -757,7 +777,7 @@
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jScrollPane1" alignment="0" pref="410" max="32767" attributes="0"/>
+                  <Component id="jScrollPane1" alignment="0" pref="427" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
           </Layout>
@@ -805,7 +825,7 @@
                           <Component id="jScrollPane9" min="-2" max="-2" attributes="0"/>
                           <Component id="jScrollPane2" min="-2" pref="151" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="1" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -988,7 +1008,7 @@
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jScrollPane4" alignment="0" pref="410" max="32767" attributes="0"/>
+                  <Component id="jScrollPane4" alignment="0" pref="427" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
           </Layout>
@@ -1044,7 +1064,7 @@
                           <Component id="jButtonFinalizarProcesos" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jButtonActualizar" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="0" pref="15" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="32" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1111,7 +1131,7 @@
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="1" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jScrollPane5" alignment="0" min="-2" pref="408" max="-2" attributes="0"/>
                           <Component id="jScrollPane7" alignment="0" min="-2" pref="118" max="-2" attributes="0"/>
@@ -1292,7 +1312,7 @@
                           <Component id="jButtonSockets" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jButtonRed" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="9" max="32767" attributes="0"/>
+                      <EmptySpace pref="26" max="32767" attributes="0"/>
                       <Component id="jScrollPane3" min="-2" pref="373" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -1423,8 +1443,8 @@
         <Container class="javax.swing.JPanel" name="jPanel3">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="Targeta Grafica">
-                <Property name="tabTitle" type="java.lang.String" value="Targeta Grafica"/>
+              <JTabbedPaneConstraints tabName="Tarjeta Gr&#xe1;fica">
+                <Property name="tabTitle" type="java.lang.String" value="Tarjeta Gr&#xe1;fica"/>
               </JTabbedPaneConstraints>
             </Constraint>
           </Constraints>
@@ -1448,7 +1468,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="jButton1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jScrollPane10" pref="376" max="32767" attributes="0"/>
+                      <Component id="jScrollPane10" pref="393" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
